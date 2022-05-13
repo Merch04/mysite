@@ -21,11 +21,11 @@ h1 {
 
 .container {
     max-width: 100%;
-    max-height: 100%;
+    max-height: 300px;
 }
 
 .videoContainer {
-    width: 1185px;
+    width: 1000px;
     margin: 0 auto;
     padding-top: 36px;
     margin-bottom: 44px;
