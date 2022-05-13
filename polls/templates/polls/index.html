@@ -10,8 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
     <title>Polls</title>
     <style type="text/css">
-        .dateStyles {
-            height: 30px;
+        .commonStyle {
+            width: 140px;
+            text-align: center;
         }
     </style>
 </head>
@@ -21,12 +22,12 @@
         <h1>Period:</h1>
         <form action="" method = "POST">
             {% csrf_token %}
-            <div class="from">
+            <div class="fromTimeCode">
                 <p>From</p>
                 {{form.start_date}}
                 {{form.start_time}}
             </div>
-            <div class="to">
+            <div class="toTimeCode">
                 <p>To</p>
                 {{form.end_date}}
                 {{form.end_time}}
