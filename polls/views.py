@@ -1,13 +1,13 @@
 from ast import Try
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-#import sqlite3
+import sqlite3
 from datetime import datetime
 from .forms import TimeInterval_Form
 
 
 
-"""def read_sqlite_table(start_rows, end_rows):
+def read_sqlite_table(start_rows, end_rows):
     try:
         sqlite_connection = sqlite3.connect('db-controller.sqlite')
         cursor = sqlite_connection.cursor()
@@ -38,7 +38,7 @@ from .forms import TimeInterval_Form
         if sqlite_connection:
             sqlite_connection.close()
             print("Соединение с SQLite закрыто")
-"""
+
 
 
 def index(request):
