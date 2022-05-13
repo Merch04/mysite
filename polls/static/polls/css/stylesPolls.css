@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    max-width: 100%;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    margin: 0;
+}
+
+p, h1 {
+    font-family: Comfortaa, Light300;
+}
+
+.container {
+    padding-top: 286px;
+    width: 350px;
+    margin: 0 auto;
+}
+
+.button_container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 155px;
+}
+
+.button {
+    border: 3px solid #fff;
+    padding: 10px 30px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.875em;
+    background-color: black;
+}

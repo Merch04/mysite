@@ -45,5 +45,7 @@ def read_sqlite_table(start_rows, end_rows):
 
 def index(request):
   need_times = read_sqlite_table(1649774679, 1649774762)
-
-  return render(request, 'polls/html/index.html')
+  return render(request, 'polls/index.html')
+  
+def statics(request):
+  return render(request, 'polls/statics.html')
