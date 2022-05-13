@@ -59,8 +59,6 @@ def statics(request):
     miss_time = read_sqlite_table(1649774679, 1649774762)
     print(miss_time)
     video=Video.objects.all()
-    for i in video:
-        print(type(i))
     content = {
         'miss_time' : miss_time,
         'times': times,
