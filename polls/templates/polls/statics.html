@@ -8,20 +8,21 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="{% static 'polls/css/stylesStatistics.css' %}">
+	<script src="{% static 'polls/js/script.js' %}" type="text/javascript"></script>
 	<title>Document</title>
 </head>
 <body>
 	<div class="container">
 		<div class="videoContainer">
 			{% for x in video %}
-			<video width="1185px" controls="controls">
+			<video width="1000px" controls="controls">
 				<source src="{{x.video.url}}" type="video/mp4">
 			</video>
 			{% endfor %}
 		</div>
 		<h1>Statistic</h1>
 		<hr>
-		<div class="statistics">
+		<div class="statistics" id="statistics">
 			<form action="">
 				<p>Время отсутствия</p>
 				{% for time in miss_time %}

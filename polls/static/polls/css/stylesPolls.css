@@ -52,6 +52,7 @@ p, h1 {
 
 .text {
     margin-right: 20px;
+    text-align: right;
 }
 
 .date {
