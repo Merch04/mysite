@@ -9,6 +9,10 @@ body {
     background-color: #fff;
 }
 
+a {
+    text-decoration: none;
+}
+
 h1 {
     font-size: 36px;
     text-align: center;
