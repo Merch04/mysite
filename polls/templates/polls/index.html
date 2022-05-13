@@ -15,30 +15,27 @@
         <a href="http://127.0.0.1:8000">FIRST PAGE</a>
 
         <h1>Period:</h1>
-    
-        <p>From</p>
-        <input type="date" class="start" name="trip-start"
-           value="2018-07-22"
-           min="2014-01-01" max="2023-12-31">
-    
-        <input type="time" class="appt" name="appt"
-           min="00:00" max="24:00" required>
-    
-        <p>To</p>
-        <input type="date" class="start" name="trip-start"
-           value="2018-07-22"
-           min="2014-01-01" max="2023-12-31">
-    
-        <input type="time" class="appt" name="appt"
-           min="00:00" max="24:00" required>
-    
+        <form action="" method = "POST">
+            <p>From:</p>
+            <input type="date" id="start" name="trip-start"
+               value="2018-07-22"
+               min="2014-01-01" max="2023-12-31">    
+            <input type="time" id="start" name="appt"
+               min="00:00" max="24:00" required>
+            <p>To:</p>
+            <input type="date" id="end" name="trip-start"
+            value="2018-07-22"
+            min="2014-01-01" max="2023-12-31">
+            <input type="time" id="end" name="appt"
+            min="00:00" max="24:00" required>
+            <input type="submit" value="OK">
+        </form>  
         <select name="places" class="places">
             <option value="#">#</option>
             <option value="#">#</option>
             <option value="#">#</option>
             <option value="#">#</option>
         </select>
-    
         <select name="cameras" class="cameras">
             <option value="#">#</option>
             <option value="#">#</option>
