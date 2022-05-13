@@ -11,9 +11,41 @@ body {
     font-family: Comfortaa, Light300;
 }
 
+.textField{
+    margin:5px;
+    border-width: 1px;
+    border-radius: 1px;
+    border-color: black;
+    
+}
+
+.textField:focus
+{
+    margin:5px;
+    border-width: 1px;
+    border-radius: 1px;
+    border-color: black;
+}
+
+.textField:hover
+{
+    margin:5px;
+    border-width: 1px;
+    border-radius: 1px;
+    border-color: black;
+}
+
+.textField:active
+{
+    margin:5px;
+    border-width: 1px;
+    border-radius: 1px;
+    border-color: black;
+}
 
 
 .container {
     width: 435px;
     margin: auto;
 }
+
