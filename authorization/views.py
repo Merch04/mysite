@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return render(request, 'templates/authorization/index.html')
+    return render(request, 'authorization/index.html')
