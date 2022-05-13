@@ -1,13 +1,12 @@
 {% extends "index.html" %}
 {% block title %}Log-in{% endblock %}
 {% block content %}
-<p>Please, use the following form to log-in:</p>
+
 <form action="." method="post">
   {{ form.username }}
   <br>
-  <br>
   {{ form.password }}
   {% csrf_token %}
-  <p><input type="submit" value="Log-in"></p>
+  <input type="submit" value="Log-in" class="button">
 </form>
 {% endblock %}
