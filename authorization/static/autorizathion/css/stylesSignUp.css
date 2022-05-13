@@ -10,6 +10,11 @@ body {
     height: 1080px;
 }
 
+h1 
+{
+    font-family: Comfortaa, Light300;
+}
+
 .container {
     width: 435px;
     margin: auto;
