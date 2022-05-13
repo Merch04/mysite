@@ -6,27 +6,34 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'polls/css/stylesStatistics.css' %}">
 	<title>Document</title>
 </head>
 <body>
 	<div class="container">
-		{% for x in video %}
-		<video width="300px" height="400" controls="controls">
-			<source src="{{x.video.url}}" type="video/mp4">
-		</video>
-		{% endfor %}
+		<div class="videoContainer">
+			{% for x in video %}
+			<video width="1185px" controls="controls">
+				<source src="{{x.video.url}}" type="video/mp4">
+			</video>
+			{% endfor %}
+		</div>
+		<h1>Statistic</h1>
+		<hr>
+		<div class="statistics">
+			<form action="">
+				<p>Время отсутствия</p>
+				{% for time in miss_time %}
+					<input type="text" value='{{time}}'>
+					<br>
+				{% endfor %}
+			</form>
+			<form action="">
+				<p>Убыток</p>
+				<input type="text" value="">
+			</form>
+		</div>
 	</div>
-
-	<form action="">
-		<p>Время отсутствия</p>
-		{% for time in miss_time %}
-			<input type="text" value='{{time}}'>
-			<br>
-		{% endfor %}
-	</form>
-	<form action="">
-		<p>Убыток</p>
-		<input type="text" value="">
-	</form>
 </body>
 </html>
