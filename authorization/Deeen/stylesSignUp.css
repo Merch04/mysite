@@ -1,7 +1,3 @@
-* {
-    box-sizing: border-box;
-}
-
 body {
     max-width: 100%;
     margin: 0;
@@ -11,38 +7,35 @@ body {
     font-family: Comfortaa, Light300;
 }
 
+.Text{
+    position: absolute;
+    width: 116px;
+    height: 40px;
+    left: 896px;
+    top: 360px;
+    text-align: center;
+}
+
+button{
+    width: 343px;
+    height: 52px;
+    left: 784px;
+    top: 586px;
+    display: block;
+    border-color: black;
+}
+
 .textField{
     margin:5px;
     border-width: 1px;
     border-radius: 1px;
+    display: block;
     border-color: black;
-    
+    width: 343px;
+    height: 52px;
+    left: 784px;
+    top: 442px;
 }
-
-.textField:focus
-{
-    margin:5px;
-    border-width: 1px;
-    border-radius: 1px;
-    border-color: black;
-}
-
-.textField:hover
-{
-    margin:5px;
-    border-width: 1px;
-    border-radius: 1px;
-    border-color: black;
-}
-
-.textField:active
-{
-    margin:5px;
-    border-width: 1px;
-    border-radius: 1px;
-    border-color: black;
-}
-
 
 .container {
     width: 435px;
