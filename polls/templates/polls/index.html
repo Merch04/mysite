@@ -9,42 +9,56 @@
     <link rel="stylesheet" href="{% static 'polls/css/stylesPolls.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
     <title>Polls</title>
+    <style type="text/css">
+        .commonStyle {
+            width: 140px;
+            text-align: center;
+            border-color: black;
+            border-radius: 5px;
+        }
+
+        .timeStyles {
+            width: 75px;
+            margin-bottom: 11px;
+        }
+
+        .dateStyles {
+            width: 106px;
+            margin-bottom: 11px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <a href="http://127.0.0.1:8000">FIRST PAGE</a>
-
         <h1>Period:</h1>
         <form action="" method = "POST">
-            <p>From:</p>
-            <input type="date" id="start" name="trip-start"
-               value="2018-07-22"
-               min="2014-01-01" max="2023-12-31">    
-            <input type="time" id="start" name="appt"
-               min="00:00" max="24:00" required>
-            <p>To:</p>
-            <input type="date" id="end" name="trip-start"
-            value="2018-07-22"
-            min="2014-01-01" max="2023-12-31">
-            <input type="time" id="end" name="appt"
-            min="00:00" max="24:00" required>
-            <input type="submit" value="OK">
-        </form>  
-        <select name="places" class="places">
-            <option value="#">#</option>
-            <option value="#">#</option>
-            <option value="#">#</option>
-            <option value="#">#</option>
-        </select>
-        <select name="cameras" class="cameras">
-            <option value="#">#</option>
-            <option value="#">#</option>
-            <option value="#">#</option>
-            <option value="#">#</option>
-        </select>        
+            {% csrf_token %}
+            <div class="timeCode d-flex">
+                <div class="text">
+                    <p class="margin_11_px">From</p>
+                    <p class="margin_32_px">To</p>
+                </div>
+                <div class="date">
+                    {{form.start_date}}
+                    {{form.end_date}}
+                </div>
+                <div class="time">
+                    {{form.start_time}}
+                    {{form.end_time}}
+                </div>
+            </div>
+            <div class="list">
+                <select>
+                    <option value="">Place Selection</option>
+                </select>
+                <select>
+                    <option value="">Cam Selection</option>
+                </select>
+            </div>
+            <div class="button_container">
+                <input type="submit" value="Confirm" class="button">
+            </div>
+        </form>         
     </div>
-
-
-    <div class="button_container"><a href="#" class="button">Confirm</a></div>
 </body>
 </html>

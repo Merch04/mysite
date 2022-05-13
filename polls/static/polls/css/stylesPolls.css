@@ -14,11 +14,17 @@ a {
 }
 
 h1 {
-    margin: 0;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 p, h1 {
     font-family: Comfortaa, Light300;
+}
+
+.d-flex {
+    display: flex;
 }
 
 .container {
@@ -27,10 +33,41 @@ p, h1 {
     margin: 0 auto;
 }
 
+.formContainer {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.timeCode {
+    margin-left: 30px;
+}
+
+.margin_11_px {
+    margin-bottom: 11px;
+}
+
+.margin_32_px {
+    margin-bottom: 32px;
+}
+
+.text {
+    margin-right: 20px;
+}
+
+.date {
+    width: 106px;
+    margin-right: 20px;
+}
+
+.time {
+    width: 75px;
+}
+
 .button_container {
     display: flex;
     justify-content: center;
     margin-bottom: 155px;
+    margin-top: 5px;
 }
 
 .button {
@@ -41,4 +78,31 @@ p, h1 {
     font-weight: 700;
     font-size: 0.875em;
     background-color: black;
+    height: 50px;
+    width: 345px;
+    border-radius: 8px;
+}
+
+.button:hover {
+    background-color: #fff;
+    color: black;
+    transition: 0.5s;
+    border-color: black;
+}
+
+.list {
+    width: 50%;
+    margin: 0 auto;
+}
+
+select {
+    color: black;
+    font-family: Comfortaa, Light300;;
+    text-align: center;
+    margin-bottom: 18px;
+    appearance: none;
+    border-radius: 8px;
+    border: 2px black solid;
+    height: 40px;
+    width: 175px;
 }
