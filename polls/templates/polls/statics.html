@@ -10,8 +10,12 @@
 </head>
 <body>
 	<form action="">
+		{{times}}
 		<p>Время отсутствия</p>
-		<input type="text" value="">
+		{% for time in miss_time %}
+			<input type="text" value='{{time}}'>
+			<br>
+		{% endfor %}
 	</form>
 	<form action="">
 		<p>Убыток</p>
