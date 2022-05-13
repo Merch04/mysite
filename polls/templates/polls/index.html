@@ -11,39 +11,42 @@
     <title>Polls</title>
 </head>
 <body>
-    <a href="http://127.0.0.1:8000">FIRST PAGE</a>
+    <div class="container">
+        <a href="http://127.0.0.1:8000">FIRST PAGE</a>
 
-    <h1>Period:</h1>
+        <h1>Period:</h1>
+    
+        <p>From</p>
+        <input type="date" class="start" name="trip-start"
+           value="2018-07-22"
+           min="2014-01-01" max="2023-12-31">
+    
+        <input type="time" class="appt" name="appt"
+           min="00:00" max="24:00" required>
+    
+        <p>To</p>
+        <input type="date" class="start" name="trip-start"
+           value="2018-07-22"
+           min="2014-01-01" max="2023-12-31">
+    
+        <input type="time" class="appt" name="appt"
+           min="00:00" max="24:00" required>
+    
+        <select name="places" class="places">
+            <option value="#">#</option>
+            <option value="#">#</option>
+            <option value="#">#</option>
+            <option value="#">#</option>
+        </select>
+    
+        <select name="cameras" class="cameras">
+            <option value="#">#</option>
+            <option value="#">#</option>
+            <option value="#">#</option>
+            <option value="#">#</option>
+        </select>        
+    </div>
 
-    <p>From</p>
-    <input type="date" id="start" name="trip-start"
-       value="2018-07-22"
-       min="2014-01-01" max="2023-12-31">
-
-    <input type="time" id="appt" name="appt"
-       min="00:00" max="24:00" required>
-
-    <p>To</p>
-    <input type="date" id="start" name="trip-start"
-       value="2018-07-22"
-       min="2014-01-01" max="2023-12-31">
-
-    <input type="time" id="appt" name="appt"
-       min="00:00" max="24:00" required>
-
-    <select name="places" class="places">
-        <option value="#">#</option>
-        <option value="#">#</option>
-        <option value="#">#</option>
-        <option value="#">#</option>
-    </select>
-
-    <select name="cameras" class="cameras">
-        <option value="#">#</option>
-        <option value="#">#</option>
-        <option value="#">#</option>
-        <option value="#">#</option>
-    </select>
 
     <div class="button_container"><a href="#" class="button">Confirm</a></div>
 </body>

@@ -1,10 +1,10 @@
 * {
     box-sizing: border-box;
+    margin: 0;
 }
 
 body {
     max-width: 100%;
-    margin: 0;
     font-size: 16px;
     background-color: #fff;
 }
@@ -13,8 +13,18 @@ a {
     text-decoration: none;
 }
 
-p {
+h1 {
+    margin: 0;
+}
+
+p, h1 {
     font-family: Comfortaa, Light300;
+}
+
+.container {
+    padding-top: 286px;
+    width: 350px;
+    margin: 0 auto;
 }
 
 .button_container {
@@ -31,8 +41,4 @@ p {
     font-weight: 700;
     font-size: 0.875em;
     background-color: black;
-}
-
-.button:hover {
-    background-color: red;
 }
