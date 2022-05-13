@@ -9,25 +9,28 @@
     <link rel="stylesheet" href="{% static 'polls/css/stylesPolls.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
     <title>Polls</title>
+    <style type="text/css">
+        .dateStyles {
+            height: 30px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <a href="http://127.0.0.1:8000">FIRST PAGE</a>
-
         <h1>Period:</h1>
         <form action="" method = "POST">
-            <p>From:</p>
-            <input type="date" id="start" name="trip-start"
-               value="2018-07-22"
-               min="2014-01-01" max="2023-12-31">    
-            <input type="time" id="start" name="appt"
-               min="00:00" max="24:00" required>
-            <p>To:</p>
-            <input type="date" id="end" name="trip-start"
-            value="2018-07-22"
-            min="2014-01-01" max="2023-12-31">
-            <input type="time" id="end" name="appt"
-            min="00:00" max="24:00" required>
+            {% csrf_token %}
+            <div class="from">
+                <p>From</p>
+                {{form.start_date}}
+                {{form.start_time}}
+            </div>
+            <div class="to">
+                <p>To</p>
+                {{form.end_date}}
+                {{form.end_time}}
+            </div>
             <input type="submit" value="OK">
         </form>  
         <select name="places" class="places">
@@ -43,8 +46,5 @@
             <option value="#">#</option>
         </select>        
     </div>
-
-
-    <div class="button_container"><a href="#" class="button">Confirm</a></div>
 </body>
 </html>

@@ -1,11 +1,9 @@
 from ast import Try
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 import sqlite3
-
-
 from datetime import datetime
-#import pytz
+from .forms import TimeInterval_Form
 
 
 
@@ -44,8 +42,15 @@ def read_sqlite_table(start_rows, end_rows):
 
 
 def index(request):
-  need_times = read_sqlite_table(1649774679, 1649774762)
-  return render(request, 'polls/index.html')
+    if request.method == 'POST':     
+        form = TimeInterval_Form(request.POST)
+        if form.is_valid():
+            return HttpResponseRedirect('statics')
+    else:
+        form = TimeInterval_Form()
+    #need_times = read_sqlite_table(1649774679, 1649774762)
+    content = {'form' : form}
+    return render(request, 'polls/index.html', content)
   
 def statics(request):
-  return render(request, 'polls/statics.html')
+    return render(request, 'polls/statics.html')
