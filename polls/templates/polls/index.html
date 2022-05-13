@@ -13,39 +13,52 @@
         .commonStyle {
             width: 140px;
             text-align: center;
+            border-color: black;
+            border-radius: 5px;
+        }
+
+        .timeStyles {
+            width: 75px;
+            margin-bottom: 11px;
+        }
+
+        .dateStyles {
+            width: 106px;
+            margin-bottom: 11px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="http://127.0.0.1:8000">FIRST PAGE</a>
         <h1>Period:</h1>
         <form action="" method = "POST">
             {% csrf_token %}
-            <div class="fromTimeCode">
-                <p>From</p>
-                {{form.start_date}}
-                {{form.start_time}}
+            <div class="timeCode d-flex">
+                <div class="text">
+                    <p class="margin_11_px">From</p>
+                    <p class="margin_32_px">To</p>
+                </div>
+                <div class="date">
+                    {{form.start_date}}
+                    {{form.end_date}}
+                </div>
+                <div class="time">
+                    {{form.start_time}}
+                    {{form.end_time}}
+                </div>
             </div>
-            <div class="toTimeCode">
-                <p>To</p>
-                {{form.end_date}}
-                {{form.end_time}}
+            <div class="list">
+                <select>
+                    <option value="">Place Selection</option>
+                </select>
+                <select>
+                    <option value="">Cam Selection</option>
+                </select>
             </div>
-            <input type="submit" value="OK">
-        </form>  
-        <select name="places" class="places">
-            <option value="#">#</option>
-            <option value="#">#</option>
-            <option value="#">#</option>
-            <option value="#">#</option>
-        </select>
-        <select name="cameras" class="cameras">
-            <option value="#">#</option>
-            <option value="#">#</option>
-            <option value="#">#</option>
-            <option value="#">#</option>
-        </select>        
+            <div class="button_container">
+                <input type="submit" value="Confirm" class="button">
+            </div>
+        </form>         
     </div>
 </body>
 </html>
