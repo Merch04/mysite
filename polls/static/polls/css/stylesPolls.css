@@ -14,15 +14,16 @@ a {
 }
 
 h1 {
-    margin: 0;
-}
-
-p {
-    font-size: 8px;
+    font-size: 36px;
+    text-align: center;
 }
 
 p, h1 {
     font-family: Comfortaa, Light300;
+}
+
+.fromTimeCode {
+    display: flex;
 }
 
 .container {
