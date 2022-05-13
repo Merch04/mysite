@@ -4,7 +4,7 @@ from django.shortcuts import render
 import sqlite3
 from datetime import datetime
 from .forms import TimeInterval_Form
-
+from .models import Video
 
 
 def read_sqlite_table(start_rows, end_rows):
@@ -58,8 +58,10 @@ def statics(request):
     times = request.session.get('times', None)
     miss_time = read_sqlite_table(1649774679, 1649774762)
     print(miss_time)
+    video=Video.objects.all()
     content = {
         'miss_time' : miss_time,
-        'times': times
+        'times': times,
+        "video": video,
     }
     return render(request, 'polls/statics.html', content)

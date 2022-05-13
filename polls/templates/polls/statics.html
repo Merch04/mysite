@@ -9,6 +9,14 @@
 	<title>Document</title>
 </head>
 <body>
+	<div class="container">
+		{% for x in video %}
+		<video width="300px" height="400px" controls="controls">
+			<source src="{{x.video.url}}" type="video/mp4">
+		</video>
+		{% endfor %}
+	</div>
+
 	<form action="">
 		<p>Время отсутствия</p>
 		{% for time in miss_time %}
