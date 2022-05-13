@@ -18,18 +18,18 @@ def read_sqlite_table(start_rows, end_rows):
         records = cursor.fetchall()
         print("Всего строк:  ", len(records))
         print("Вывод каждой строки")
-        need_times = []
+        miss_time = []
         for i in range(1, len(records)):
             last_row = records[i-1]
             real_row = records[i]
             if real_row[1] - last_row[1] >= 2:
                 last_time = datetime.fromtimestamp(last_row[1])
                 real_time = datetime.fromtimestamp(real_row[1])
-                need_times.append([last_row, real_row])
-                print(f"{last_time.strftime('%Y-%m-%d %H:%M:%S')}  ->  {real_time.strftime('%Y-%m-%d %H:%M:%S')}")
+                #miss_time.append(f'{last_row[1]}  ->  {real_row[1]}')
+                miss_time.append(f"{last_time.strftime('%H:%M:%S')}  ->  {real_time.strftime('%H:%M:%S')}")
 
         cursor.close()
-        return need_times
+        return miss_time
 
     except sqlite3.Error as error:
         print("Ошибка при работе с SQLite", error)
@@ -45,6 +45,8 @@ def index(request):
     if request.method == 'POST':     
         form = TimeInterval_Form(request.POST)
         if form.is_valid():
+            print(form.cleaned_data['start_time'])
+            request.session['times'] = [str(form.cleaned_data['start_time']), str(form.cleaned_data['end_time'])]
             return HttpResponseRedirect('statics')
     else:
         form = TimeInterval_Form()
@@ -53,4 +55,11 @@ def index(request):
     return render(request, 'polls/index.html', content)
   
 def statics(request):
-    return render(request, 'polls/statics.html')
+    times = request.session.get('times', None)
+    miss_time = read_sqlite_table(1649774679, 1649774762)
+    print(miss_time)
+    content = {
+        'miss_time' : miss_time,
+        'times': times
+    }
+    return render(request, 'polls/statics.html', content)
