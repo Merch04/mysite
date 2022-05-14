@@ -48,7 +48,7 @@ a {
     width: 1000px;
     margin: 0 auto;
     text-align: center;
-    border: 2px black solid;
+    border: 3px black solid;
     border-radius: 16px;
     background: rgba(0, 0, 0, 0.5);
 }
@@ -67,6 +67,9 @@ a {
 
 .videoContainer video {
     margin-bottom: 30px;
+    background: black; 
+    padding: 9px;
+    box-shadow: 10px 5px 5px black;
 }
 
 .videoContainer a:hover {
