@@ -32,7 +32,10 @@
 			</form>
 			<form action="">
 				<p class="statisticBorder">Тайм-код</p>
-				<input type="text" value="">
+				{% for timecode in miss_timecode %}
+					<input type="text" value='{{timecode}}'>
+					<br>
+				{% endfor %}
 			</form>
 			<form action="">
 				<p class="statisticBorder">Убыток</p>
