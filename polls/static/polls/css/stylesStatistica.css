@@ -3,15 +3,15 @@
 }
 
 body {
-    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
     color: #292b2c;
-    background: rgb(232,153,247);
-    background: linear-gradient(90deg, rgba(232,153,247,1) 0%, rgba(156,169,244,1) 100%);
+    background: rgb(232, 153, 247);
+    background: linear-gradient(90deg, rgba(232, 153, 247, 1) 0%, rgba(156, 169, 244, 1) 100%);
     margin: 0;
-} 
+}
 
 a {
     text-decoration: none;
@@ -49,8 +49,8 @@ a {
 
 .borderGradient {
     height: 1px;
-    background: rgb(232,153,247);
-    background: linear-gradient(90deg, rgba(232,153,247,1) 0%, rgba(156,169,244,1) 100%);
+    background: rgb(232, 153, 247);
+    background: linear-gradient(90deg, rgba(232, 153, 247, 1) 0%, rgba(156, 169, 244, 1) 100%);
 }
 
 .statistics {
@@ -66,7 +66,7 @@ a {
 }
 
 .statistics p {
-    border-bottom: 1px #f8f8f8 solid ;
+    border-bottom: 1px #f8f8f8 solid;
     margin-bottom: 8px;
     padding-bottom: 8px;
 }
@@ -79,16 +79,17 @@ a {
 }
 
 .videoContainer {
+
     padding-top: 60px;
     width: 930px;
     text-align: center;
-<<<<<<< HEAD
+
     margin: 0 auto;
-=======
+
     border: 3px black solid;
     border-radius: 16px;
     background: rgba(0, 0, 0, 0.5);
->>>>>>> d855150 (master)
+
 }
 
 .common {
@@ -98,57 +99,94 @@ a {
     background-color: white;
 }
 
-<<<<<<< HEAD
-/* .visual {
-    background-color: white;
-    width: 950px;
-    height: 909px;
-} */
-=======
 .videoContainer video {
     margin-bottom: 30px;
-    background: black; 
+    background: black;
     padding: 9px;
     box-shadow: 10px 5px 5px black;
+    margin-top: 60px;
+    width: 930px;
+    text-align: center;
 }
->>>>>>> d855150 (master)
+
+.visual {
+    background-color: #1f1e1e;
+    width: 950px;
+    height: 910px;
+}
+
+.videoContainer a {
+    padding: 20px;
+    text-transform: uppercase;
+    font-family: Comfortaa, Light300;
+    font-weight: 700;
+    font-size: 0.875em;
+    background-color: rgb(35, 35, 46);
+    color: #f8f8f8;
+    border: 3px black solid;
+}
+
+
+.videoContainer a:hover {
+    background-color: rgb(205, 191, 211);
+    color: black;
+    transition: 0.5s;
+    border-color: black;
+}
+
+.videobtn {
+    margin-left: 45px;
+}
 
 /* свойства модального окна по умолчанию */
 .modal {
-    position: fixed; /* фиксированное положение */
+    position: fixed;
+    /* фиксированное положение */
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0,0,0,0.5); /* цвет фона */
+    background: rgba(0, 0, 0, 0.5);
+    /* цвет фона */
     z-index: 1050;
-    opacity: 0; /* по умолчанию модальное окно прозрачно */
-    -webkit-transition: opacity 200ms ease-in; 
+    opacity: 0;
+    /* по умолчанию модальное окно прозрачно */
+    -webkit-transition: opacity 200ms ease-in;
     -moz-transition: opacity 200ms ease-in;
-    transition: opacity 200ms ease-in; /* анимация перехода */
-    pointer-events: none; /* элемент невидим для событий мыши */
+    transition: opacity 200ms ease-in;
+    /* анимация перехода */
+    pointer-events: none;
+    /* элемент невидим для событий мыши */
     margin: 0;
     padding: 0;
 }
+
 /* при отображении модального окно */
 .modal:target {
-    opacity: 1; /* делаем окно видимым */
-	pointer-events: auto; /* элемент видим для событий мыши */
-    overflow-y: auto; /* добавляем прокрутку по y, когда элемент не помещается на страницу */
+    opacity: 1;
+    /* делаем окно видимым */
+    pointer-events: auto;
+    /* элемент видим для событий мыши */
+    overflow-y: auto;
+    /* добавляем прокрутку по y, когда элемент не помещается на страницу */
 }
+
 /* ширина модального окна и его отступы от экрана */
 .modal-dialog {
     position: relative;
     width: auto;
     margin: 10px;
 }
+
 @media (min-width: 576px) {
-  .modal-dialog {
-      max-width: 900px;
-      margin: 30px auto; /* для отображения модального окна по центру */
-  }
+    .modal-dialog {
+        max-width: 900px;
+        margin: 30px auto;
+        /* для отображения модального окна по центру */
+    }
 }
-/* свойства для блока, содержащего контент модального окна */ 
+
+/* свойства для блока, содержащего контент модального окна */
 .modal-content {
     position: relative;
     display: -webkit-box;
@@ -163,16 +201,18 @@ a {
     background-color: #fff;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
-    border: 1px solid rgba(0,0,0,.2);
+    border: 1px solid rgba(0, 0, 0, .2);
     border-radius: .3rem;
     outline: 0;
 }
+
 @media (min-width: 768px) {
-  .modal-content {
-      -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
-      box-shadow: 0 5px 15px rgba(0,0,0,.5);
-  }
+    .modal-content {
+        -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    }
 }
+
 /* свойства для заголовка модального окна */
 .modal-header {
     display: -webkit-box;
@@ -192,6 +232,7 @@ a {
     background-color: rgb(35, 35, 46);
     color: #f8f8f8;
 }
+
 .modal-title {
     margin-top: 0;
     margin-bottom: 0;
@@ -199,6 +240,7 @@ a {
     font-size: 1.25rem;
     font-weight: 500;
 }
+
 /* свойства для кнопки "Закрыть" */
 .close {
     float: right;
@@ -211,13 +253,16 @@ a {
     opacity: 0.5;
     text-decoration: none;
 }
+
 /* свойства для кнопки "Закрыть" при нахождении её в фокусе или наведении */
-.close:focus, .close:hover {
+.close:focus,
+.close:hover {
     color: white;
     text-decoration: none;
     cursor: pointer;
     opacity: .75;
 }
+
 /* свойства для блока, содержащего основное содержимое окна */
 .modal-body {
     position: relative;
