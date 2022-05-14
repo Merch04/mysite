@@ -12,6 +12,7 @@
     <title>Polls</title>
     <style type="text/css">
         .commonStyle {
+            background-color: rgb(205, 191, 211);
             width: 140px;
             text-align: center;
             border-color: black;
@@ -33,6 +34,10 @@
     <div class="kostili"></div>
     <div class="container">
         <h1>Period:</h1>
+        <div class="timeAndDate d-flex">
+            <p class="signDate">Date</p>
+            <p class="signTime">Time</p>
+        </div>
         <form action="" method = "POST">
             {% csrf_token %}
             <div class="timeCode d-flex">

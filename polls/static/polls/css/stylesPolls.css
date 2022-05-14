@@ -28,6 +28,20 @@ p, h1 {
     display: flex;
 }
 
+.timeAndDate {
+    width: 276px;
+    justify-content: right;
+    margin-bottom: 5px;
+}
+
+.timeAndDate .signDate {
+    margin-right: 67px;
+}
+
+.timeAndDate .signTime {
+    margin-right: 3px;
+}
+
 .kostili {
     height: 5px;
     padding-top: 278px;
@@ -40,7 +54,7 @@ p, h1 {
     margin: 0 auto;
     border: 2px black solid;
     border-radius: 16px;
-    background-color: #fff;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .formContainer {
@@ -82,20 +96,19 @@ p, h1 {
 }
 
 .button {
-    border: 3px solid #fff;
     padding: 10px 30px;
-    text-decoration: none;
-    color: #fff;
     font-weight: 700;
     font-size: 0.875em;
-    background-color: black;
+    background-color: rgb(35, 35, 46);
+    color: #f8f8f8;
     height: 50px;
     width: 345px;
     border-radius: 8px;
+    border-color: black;
 }
 
 .button:hover {
-    background-color: #fff;
+    background-color: rgb(205, 191, 211);
     color: black;
     transition: 0.5s;
     border-color: black;
@@ -107,6 +120,7 @@ p, h1 {
 }
 
 select {
+    background-color: rgb(205, 191, 211);
     color: black;
     font-family: Comfortaa, Light300;;
     text-align: center;
