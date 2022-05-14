@@ -12,21 +12,14 @@ from .models import Video
 from .models import Shift, Telemetry, Video
 
 from ast import Try
-<< << << < HEAD
-== == == =
->>>>>> > 1456a839c29fce541e84e72326209dd2aa4e4d58
-<< << << < HEAD
-
-== == == =
->>>>>> > 1456a839c29fce541e84e72326209dd2aa4e4d58
 
 
 def read_sqlite_table(start_rows, end_rows):
     profit_coef = {
-    '9': 0.4,
-    '12': 1,
-    '18': 0.5
-}
+        '9': 0.4,
+        '12': 1,
+        '18': 0.5
+    }
     try:
         object_arr = Telemetry.objects.filter(
             time__gt=start_rows, time__lt=end_rows)
@@ -67,14 +60,12 @@ def read_sqlite_table(start_rows, end_rows):
                     f"{last_time.strftime('%H:%M:%S')}  ->  {real_time.strftime('%H:%M:%S')}")
                 miss_timecode.append(f"{last_timecode}  ->  {real_timecode}")
 
-
-<< << << < HEAD
                 temp_samp += real_row.time - last_row.time
         temp_samp = time.strftime("%H:%M:%S", time.gmtime(temp_samp))
-=======
-                temp_samp += real_row[1] - last_row[1]
-        temp_samp =time.strftime("%H:%M:%S", time.gmtime(temp_samp))
->>>>>>> 1456a839c29fce541e84e72326209dd2aa4e4d58
+
+        temp_samp += real_row[1] - last_row[1]
+        temp_samp = time.strftime("%H:%M:%S", time.gmtime(temp_samp))
+
         lose_profit = lose_profit * 5
 
         return miss_time, miss_timecode, temp_samp, lose_profit
@@ -84,12 +75,7 @@ def read_sqlite_table(start_rows, end_rows):
         return None
 
 
-
 def index(request):
-<<<<<<< HEAD
-
-=======
->>>>>>> 1456a839c29fce541e84e72326209dd2aa4e4d58
     if (request.user.username == ''):
         return HttpResponseRedirect('/')
     else:
@@ -132,12 +118,9 @@ def statics(request):
             "video": video,
         }
         return render(request, 'polls/statics.html', content)
-<<<<<<< HEAD
 
 
 # def hui(request):
 #     peremenaya = Telemetry.objects.filter(
 #         time__lt=1649774681, time__gt=1649774679)
 #     print([i.id for i in peremenaya])
-=======
->>>>>>> 1456a839c29fce541e84e72326209dd2aa4e4d58
