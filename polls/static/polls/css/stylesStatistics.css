@@ -6,7 +6,8 @@ body {
     margin: 0;
     max-width: 100%;
     font-size: 16px;
-    background-color: #fff;
+    background: rgb(156,169,244);
+    background: linear-gradient(90deg, rgba(156,169,244,1) 4%, rgba(232,163,247,1) 84%);
 }
 
 p, h1 {

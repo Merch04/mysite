@@ -39,28 +39,30 @@ def read_sqlite_table(start_rows, end_rows):
 
                 time_kirill = str(last_time).split(" ")[1].split(":")[0]
 
-                last_timecode = last_row[1] - start_rows
-                real_timecode = real_row[1] - start_rows
+                last_timecode = last_row.time - start_rows
+                real_timecode = real_row.time - start_rows
                 last_timecode = time.strftime(
                     "%H:%M:%S", time.gmtime(last_timecode))
                 real_timecode = time.strftime(
                     "%H:%M:%S", time.gmtime(real_timecode))
 
                 if int(time_kirill) >= 18:
-                    lose_profit += profit_coef['18'] * (real_row[1] - last_row[1])
+                    lose_profit += profit_coef['18'] * \
+                        (real_row.time - last_row.time)
                 elif int(time_kirill) >= 12:
-                    lose_profit += profit_coef['12'] * (real_row[1] - last_row[1])
+                    lose_profit += profit_coef['12'] * \
+                        (real_row.time - last_row.time)
                 elif int(time_kirill) >= 9:
-                    lose_profit += profit_coef['9'] * (real_row[1] - last_row[1])
+                    lose_profit += profit_coef['9'] * \
+                        (real_row.time - last_row.time)
 
                 miss_time.append(
                     f"{last_time.strftime('%H:%M:%S')}  ->  {real_time.strftime('%H:%M:%S')}")
                 miss_timecode.append(f"{last_timecode}  ->  {real_timecode}")
 
                 temp_samp += real_row.time - last_row.time
-        temp_samp = time.strftime("%H:%M:%S", time.gmtime(temp_samp))
 
-        temp_samp += real_row[1] - last_row[1]
+        temp_samp += real_row.time - last_row.time
         temp_samp = time.strftime("%H:%M:%S", time.gmtime(temp_samp))
 
         lose_profit = lose_profit * 5
