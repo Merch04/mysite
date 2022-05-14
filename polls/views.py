@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 import sqlite3
 from datetime import datetime
-from .forms import TimeInterval_Form
+from .forms import DateForm #new
 from .models import Video
 import time
 
@@ -71,15 +71,20 @@ def read_sqlite_table(start_rows, end_rows):
 
 def index(request):
     if request.method == 'POST':     
-        form = TimeInterval_Form(request.POST)
-        if form.is_valid():
-            print(form.cleaned_data['start_time'])
-            request.session['times'] = [str(form.cleaned_data['start_time']), str(form.cleaned_data['end_time'])]
+        
+        form_date = DateForm(request.POST) #new
+        if  form_date.is_valid(): #new
+            
+            print('ДАТА С ВИДЖЕТА')
+            print(form_date.cleaned_data['s_date']) #new
+            print(form_date.cleaned_data['e_date']) #new
+            #request.session['times'] = [str(form.cleaned_data['start_time']), str(form.cleaned_data['end_time'])]
+
             return HttpResponseRedirect('statics')
     else:
-        form = TimeInterval_Form()
+            form_date = DateForm() #new
     #need_times = read_sqlite_table(1649774679, 1649774762)
-    content = {'form' : form}
+    content = {'form_date': form_date}
     return render(request, 'polls/index.html', content)
   
 def statics(request):
