@@ -18,7 +18,12 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js" integrity="sha256-FEqEelWI3WouFOo2VWP/uJfs1y8KJ++FLh2Lbqc8SJk=" crossorigin="anonymous"></script>
 </head>
 <body>
-	<div class="kostili"></div>
+	<header class="header">
+		<div class="back">
+			<a href="http://127.0.0.1:8000/polls/">Back to Period</a>
+			<a href="#openModal">Show Statistic</a>
+		</div>
+	</header>
 	<div class="container"></div>
 		<div id="openModal" class="modal">
 			<div class="modal-dialog">
@@ -56,14 +61,20 @@
 			</div>
 		</div>
 	</div>
-	<div class="videoContainer">
-		{% for x in video %}
-		<video width="840px" controls="controls">
-			<source src="{{x.video.url}}" type="video/mp4">
-		</video>
-		{% endfor %}
-		<a href="http://127.0.0.1:8000/polls/">Back to Period</a>
-		<a href="#openModal">Show Statistic</a>
-	</div>
+	<section class="common d-flex">
+		<div class="videoContainer">
+			{% for x in video %}
+			<video width="840px" controls="controls">
+				<source src="{{x.video.url}}" type="video/mp4">
+			</video>
+			{% endfor %}
+			<div class="videobtn d-flex">
+				<a href="#">Change video</a>
+			</div>
+		</div>
+		<div class="visual">
+			
+		</div>
+	</section>
 </body>
 </html>
