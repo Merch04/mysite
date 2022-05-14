@@ -1,7 +1,10 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
+
 from .forms import LoginForm
+
+from django.shortcuts import redirect
 
 
 def user_login(request):
@@ -22,3 +25,5 @@ def user_login(request):
     else:
         form = LoginForm()
     return render(request, 'authorization/login.html', {'form': form})
+
+

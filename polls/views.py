@@ -7,7 +7,6 @@ from .forms import TimeInterval_Form
 from .models import Video
 import time
 
-
 def read_sqlite_table(start_rows, end_rows):
     profit_coef = {
     '9': 0.4,
