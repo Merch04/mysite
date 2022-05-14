@@ -26,20 +26,20 @@
 			<form action="">
 				<p class="statisticBorder">Время отсутствия</p>
 				{% for time in miss_time %}
-					<input type="text" value='{{time}}'>
+					<input type="text" value='{{time}}' disabled>
 					<br>
 				{% endfor %}
 			</form>
 			<form action="">
 				<p class="statisticBorder">Тайм-код</p>
 				{% for timecode in miss_timecode %}
-					<input type="text" value="{{timecode}}">
+					<input type="text" value="{{timecode}}" disabled>
 					<br>				
 				{% endfor %}
 			</form>
 			<form action="">
 				<p class="statisticBorder">Убыток</p>
-				<input type="text" value="">
+				<input type="text" value="" disabled>
 			</form>
 		</div>
 	</div>
