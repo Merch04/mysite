@@ -36,13 +36,15 @@ h1 {
     margin-top: 44px;
     margin-bottom: 75px;
     text-align: center;
-    width: 380px;
+    width: 600px;
     display: flex;
     justify-content: space-between;
 }
 
 .statistics input {
+    border: none;
     text-align: center;
+    margin-bottom: 5px;
     font-family: Comfortaa, Light300;
 }
 
@@ -50,4 +52,10 @@ hr {
     width: 900px;
     border-bottom: 1px aliceblue solid;
     margin: 0 auto;
+}
+
+.statisticBorder p {
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px gray solid;
 }
