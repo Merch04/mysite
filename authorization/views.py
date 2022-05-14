@@ -17,8 +17,8 @@ def user_login(request):
                     return HttpResponseRedirect('/polls/')
                 else:
                     return HttpResponse('Disabled account')
-            else:
-                return HttpResponse('Invalid login')
+            #else:
+                #return HttpResponse('Invalid login')
     else:
         form = LoginForm()
     return render(request, 'authorization/login.html', {'form': form})

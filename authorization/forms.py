@@ -6,3 +6,6 @@ class LoginForm(forms.Form):
         widget=forms.TextInput(attrs={'class': 'myfieldclass'}))
     password = forms.CharField(
         widget=forms.PasswordInput(attrs={'class': 'myfieldclass'}))
+
+class non_field_errors(forms.Form):
+    print("kal")
