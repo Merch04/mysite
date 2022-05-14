@@ -35,11 +35,7 @@ p, h1 {
 }
 
 .timeAndDate .signDate {
-    margin-right: 67px;
-}
-
-.timeAndDate .signTime {
-    margin-right: 3px;
+    margin-right: 70px;
 }
 
 .kostili {
@@ -115,7 +111,7 @@ p, h1 {
 }
 
 .list {
-    width: 50%;
+    width: 175px;
     margin: 0 auto;
 }
 
@@ -126,8 +122,11 @@ select {
     text-align: center;
     margin-bottom: 18px;
     appearance: none;
-    border-radius: 8px;
     border: 2px black solid;
     height: 40px;
     width: 175px;
+}
+
+select:focus {
+    outline: none !important;
 }
