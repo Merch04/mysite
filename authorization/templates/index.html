@@ -18,48 +18,87 @@
         left: 896px;
         top: 360px;
 }
+
+h1 {
+    margin-bottom: 40px;
+}
+
 body {
     height: 0px;
     max-width: 100%;
     margin: 0;
     font-size: 16px;
-    background-color: rgb(255, 255, 255);
+    background: rgb(156,169,244);
+    background: linear-gradient(90deg, rgba(156,169,244,1) 4%, rgba(232,163,247,1) 84%);
     font-family: Comfortaa, Light300;
     text-align: center;
     margin: 5px;
-    margin-top: 15%;
-    
+    margin-top: 15%;    
 }
+
 .myfieldclass{
     margin:5px;
     padding: 5px;
-    border-width: 1px;
-    border-radius: 1px;
-    border-color: black;
+    border: 2px black solid;
     width: 343px;
     height: 52px;
     left: 784px;
     top: 442px;
-    color: rgb(0, 0, 0);
     margin-top:5px;
-
+    margin-bottom: 20px;
 }
+
+.myfieldclass:focus {
+   outline: none !important;
+}
+
 .container {
+    border-radius: 20px;
+    padding: 32px 20px;
     width: 435px;
-    margin: auto;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px black solid;
 }
-.button{
-    width: 343px;
-    height: 52px;
-    left: 784px;
-    top: 586px;
-    display: block;
-    border-color: black;
-    margin: auto;
-    border-radius: 5px;
-    background: black;
-    color: white;
 
+.button {
+    width: 150px;
+    height: 52px;
+    display: block;
+    margin: 0 auto;
+    background-color: rgb(35, 35, 46);
+    color: #f8f8f8;
+    border-radius: 8px;
+    margin-top: 5px;
+    border: 2px black solid;
+}
+
+input[type="submit"] {
+    font-size:24px;
+}
+
+.button:hover {
+    background-color: rgb(205, 191, 211);
+    color: black;
+    transition: 0.5s;
+}
+
+input[type='text'] {
+    text-align: center;
+    font-size: 24px;
+    background-color: rgb(205, 191, 211);
+    border-radius: 8px;
+}
+
+input[type='password'] {
+    text-align: center;
+    font-size: 24px;
+    background-color: rgb(205, 191, 211);
+    border-radius: 8px;
+}
+
+.toWrite p {
+    margin-bottom: 5px;
+    font-size: 18px;
 }
 /* тут так все хреново сделано, просто ужас */
     </style>
@@ -67,12 +106,11 @@ body {
 </head>
 <body>
     <div class="container">
-        
         <h1 calss="Text">Login</h1>
-
+        <div class="">
+    </div>
         {% block content %}
         {% endblock %}
-
     </div>
 </body>
 </html>

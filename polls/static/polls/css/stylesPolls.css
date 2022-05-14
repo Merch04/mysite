@@ -6,7 +6,8 @@
 body {
     max-width: 100%;
     font-size: 16px;
-    background-color: #fff;
+    background: rgb(156,169,244);
+    background: linear-gradient(90deg, rgba(156,169,244,1) 4%, rgba(232,163,247,1) 84%);
 }
 
 a {
@@ -27,10 +28,29 @@ p, h1 {
     display: flex;
 }
 
+.timeAndDate {
+    width: 276px;
+    justify-content: right;
+    margin-bottom: 5px;
+}
+
+.timeAndDate .signDate {
+    margin-right: 70px;
+}
+
+.kostili {
+    height: 5px;
+    padding-top: 278px;
+}
+
 .container {
-    padding-top: 286px;
+    padding: 32px 20px;
+    margin-top: 286px;
     width: 350px;
     margin: 0 auto;
+    border: 2px black solid;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .formContainer {
@@ -52,6 +72,7 @@ p, h1 {
 
 .text {
     margin-right: 20px;
+    text-align: right;
 }
 
 .date {
@@ -66,43 +87,46 @@ p, h1 {
 .button_container {
     display: flex;
     justify-content: center;
-    margin-bottom: 155px;
+
     margin-top: 5px;
 }
 
 .button {
-    border: 3px solid #fff;
     padding: 10px 30px;
-    text-decoration: none;
-    color: #fff;
     font-weight: 700;
     font-size: 0.875em;
-    background-color: black;
+    background-color: rgb(35, 35, 46);
+    color: #f8f8f8;
     height: 50px;
     width: 345px;
     border-radius: 8px;
+    border-color: black;
 }
 
 .button:hover {
-    background-color: #fff;
+    background-color: rgb(205, 191, 211);
     color: black;
     transition: 0.5s;
     border-color: black;
 }
 
 .list {
-    width: 50%;
+    width: 175px;
     margin: 0 auto;
 }
 
 select {
+    background-color: rgb(205, 191, 211);
     color: black;
     font-family: Comfortaa, Light300;;
     text-align: center;
     margin-bottom: 18px;
     appearance: none;
-    border-radius: 8px;
     border: 2px black solid;
     height: 40px;
     width: 175px;
+}
+
+select:focus {
+    outline: none !important;
 }

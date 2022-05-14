@@ -2,11 +2,29 @@
 {% block title %}Log-in{% endblock %}
 {% block content %}
 
-<form action="." method="post">
+<form action="." method="post" class="toWrite">
+  <p>Your Name</p>
   {{ form.username }}
-  <br>
+  <p>Password</p>
   {{ form.password }}
+  <!--{{form.as_p}}-->
+
   {% csrf_token %}
-  <input type="submit" value="Log-in" class="button">
+
+ <!--
+  <div class="form-error">{{ form.non_field_errors }}</div>
+
+  {% for f in form%}
+  <p><label class="form-label" for="{{ f.id_for_label }}"> {{f.label}}:</label> {{ f }}</p>
+  <div class="form-error">{{ f.errors}}</div>
+  {% endfor %}
+-->
+  
+  <input type="submit" value="OK" class="button">
+
+
 </form>
+
+
 {% endblock %}
+

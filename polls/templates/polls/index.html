@@ -8,13 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'polls/css/stylesPolls.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+    <script src="{% static 'polls/js/scriptPolls.js' %}" type="text/javascript"></script>
     <title>Polls</title>
     <style type="text/css">
         .commonStyle {
+            background-color: rgb(205, 191, 211);
             width: 140px;
             text-align: center;
             border-color: black;
             border-radius: 5px;
+        }
+
+        .commonStyle:focus {
+            outline: none !important;
         }
 
         .timeStyles {
@@ -29,8 +35,13 @@
     </style>
 </head>
 <body>
+    <div class="kostili"></div>
     <div class="container">
-        <h1>Period:</h1>
+        <h1>Period</h1>
+        <div class="timeAndDate d-flex">
+            <p class="signDate">Date</p>
+            <p class="signTime">Time</p>
+        </div>
         <form action="" method = "POST">
             {% csrf_token %}
             <div class="timeCode d-flex">
@@ -48,11 +59,13 @@
                 </div>
             </div>
             <div class="list">
-                <select>
-                    <option value="">Place Selection</option>
+                <select id="dropList">
+                    <option value="" style="display: none;" selected="selected">Place Selection</option>
+                    <option value=""></option>
                 </select>
-                <select>
-                    <option value="">Cam Selection</option>
+                <select id="dropList">
+                    <option value="" style="display: none;" selected="selected">Cam Selection</option>
+                    <option value=""></option>
                 </select>
             </div>
             <div class="button_container">

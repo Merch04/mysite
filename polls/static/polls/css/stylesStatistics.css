@@ -9,30 +9,52 @@ body {
     background-color: #fff;
 }
 
+p, h1 {
+    font-family: Comfortaa, Light300;
+}
 
+h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.videoContainer {
+    width: 1008px;
+    height: 571px;
+    margin: 0 auto;
+    margin-top: 36px;
+    box-shadow: 7px 7px 2px 1px rgba(0, 0, 0, 0.2);
+    margin-bottom: 44px;
+    border: 4px black solid;
+}
 
 .statistics {
-    text-align: center;
     margin: 0 auto;
-    width: 380px;
+    margin-top: 44px;
+    margin-bottom: 75px;
+    text-align: center;
+    width: 800px;
     display: flex;
     justify-content: space-between;
 }
 
-.timeOutOfWork p {
-    margin: 0;
+.statistics input {
+    border: none;
+    text-align: center;
+    margin-bottom: 5px;
+    font-family: Comfortaa, Light300;
 }
 
-.timeOutOfWork input {
-    margin-top: 5px;
-    display: block;
+hr {
+    width: 900px;
+    border-bottom: 1px aliceblue solid;
+    margin: 0 auto;
 }
 
-.lostMoney p {
-    margin: 0;
-}
-
-.lostMoney input {
-    margin-top: 5px;
-    display: block;
+.statisticBorder {
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px gray solid;
 }
