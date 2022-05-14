@@ -2,9 +2,10 @@
 {% block title %}Log-in{% endblock %}
 {% block content %}
 
-<form action="." method="post">
+<form action="." method="post" class="toWrite">
+  <p>Your Name</p>
   {{ form.username }}
-  <br>
+  <p>Password</p>
   {{ form.password }}
   <!--{{form.as_p}}-->
 
@@ -18,7 +19,7 @@
   <div class="form-error">{{ f.errors}}</div>
   {% endfor %}
 -->
-
+  
   <input type="submit" value="OK" class="button">
 
 
