@@ -6,7 +6,8 @@
 body {
     max-width: 100%;
     font-size: 16px;
-    background-color: #fff;
+    background: rgb(156,169,244);
+    background: linear-gradient(90deg, rgba(156,169,244,1) 4%, rgba(232,163,247,1) 84%);
 }
 
 a {
@@ -28,9 +29,13 @@ p, h1 {
 }
 
 .container {
-    padding-top: 286px;
+    padding-top: 136px;
+    margin-top: 286px;
     width: 350px;
     margin: 0 auto;
+    border: 1px black solid;
+    border-radius: 2px;
+    background-color: #fff;
 }
 
 .formContainer {
@@ -67,7 +72,7 @@ p, h1 {
 .button_container {
     display: flex;
     justify-content: center;
-    margin-bottom: 155px;
+
     margin-top: 5px;
 }
 

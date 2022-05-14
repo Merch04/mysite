@@ -23,7 +23,8 @@ body {
     max-width: 100%;
     margin: 0;
     font-size: 16px;
-    background-color: rgb(255, 255, 255);
+    background: rgb(156,169,244);
+    background: linear-gradient(90deg, rgba(156,169,244,1) 4%, rgba(232,163,247,1) 84%);
     font-family: Comfortaa, Light300;
     text-align: center;
     margin: 5px;
@@ -40,7 +41,6 @@ body {
     height: 52px;
     left: 784px;
     top: 442px;
-    color: rgb(0, 0, 0);
     margin-top:5px;
 
 }
@@ -48,6 +48,7 @@ body {
     width: 435px;
     margin: auto;
 }
+
 .button{
     width: 343px;
     height: 52px;
@@ -56,10 +57,33 @@ body {
     display: block;
     border-color: black;
     margin: auto;
-    border-radius: 5px;
-    background: black;
-    color: white;
+    background-color: black;
+    color: #f8f8f8;
+    border-radius: 8px;
+}
 
+input[type="submit"] {
+    font-size:24px;
+}
+
+.button:hover {
+    background-color: #f8f8f8;
+    color: black;
+    transition: 0.5s;
+}
+
+input[type='text'] {
+    text-align: center;
+    font-size: 24px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+}
+
+input[type='password'] {
+    text-align: center;
+    font-size: 24px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
 }
 
     </style>
