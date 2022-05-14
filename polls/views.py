@@ -47,14 +47,11 @@ def read_sqlite_table(start_rows, end_rows):
                     "%H:%M:%S", time.gmtime(real_timecode))
 
                 if int(time_kirill) >= 18:
-                    lose_profit += profit_coef['18'] * \
-                        (real_row[1] - last_row[1])
+                    lose_profit += profit_coef['18'] * (real_row[1] - last_row[1])
                 elif int(time_kirill) >= 12:
-                    lose_profit += profit_coef['12'] * \
-                        (real_row[1] - last_row[1])
+                    lose_profit += profit_coef['12'] * (real_row[1] - last_row[1])
                 elif int(time_kirill) >= 9:
-                    lose_profit += profit_coef['9'] * \
-                        (real_row[1] - last_row[1])
+                    lose_profit += profit_coef['9'] * (real_row[1] - last_row[1])
 
                 miss_time.append(
                     f"{last_time.strftime('%H:%M:%S')}  ->  {real_time.strftime('%H:%M:%S')}")
