@@ -4,18 +4,23 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 import sqlite3
 from datetime import datetime
+<<<<<<< HEAD
+from .forms import TimeInterval_Form
+from .models import Shift, Telemetry, Video
+=======
 from .forms import DateForm #new
 from .models import Video
+>>>>>>> 58d116c0af2f88d0cb16093f7e8c859ef376b200
 import time
 from django.contrib.auth import logout
 from django.contrib.auth.models import AnonymousUser
 
 def read_sqlite_table(start_rows, end_rows):
     profit_coef = {
-    '9': 0.4,
-    '12': 1 ,
-    '18': 0.5
-}
+        '9': 0.4,
+        '12': 1,
+        '18': 0.5
+    }
     try:
         sqlite_connection = sqlite3.connect('db-controller.sqlite')
         cursor = sqlite_connection.cursor()
@@ -39,24 +44,29 @@ def read_sqlite_table(start_rows, end_rows):
                 real_time = datetime.fromtimestamp(real_row[1])
 
                 time_kirill = str(last_time).split(" ")[1].split(":")[0]
-                
 
                 last_timecode = last_row[1] - start_rows
                 real_timecode = real_row[1] - start_rows
-                last_timecode = time.strftime("%H:%M:%S", time.gmtime(last_timecode))
-                real_timecode = time.strftime("%H:%M:%S", time.gmtime(real_timecode))
+                last_timecode = time.strftime(
+                    "%H:%M:%S", time.gmtime(last_timecode))
+                real_timecode = time.strftime(
+                    "%H:%M:%S", time.gmtime(real_timecode))
 
                 if int(time_kirill) >= 18:
-                    lose_profit += profit_coef['18']* (real_row[1] - last_row[1] )
+                    lose_profit += profit_coef['18'] * \
+                        (real_row[1] - last_row[1])
                 elif int(time_kirill) >= 12:
-                    lose_profit += profit_coef['12']* (real_row[1] - last_row[1] )
+                    lose_profit += profit_coef['12'] * \
+                        (real_row[1] - last_row[1])
                 elif int(time_kirill) >= 9:
-                    lose_profit += profit_coef['9']* (real_row[1] - last_row[1] )
+                    lose_profit += profit_coef['9'] * \
+                        (real_row[1] - last_row[1])
 
-                miss_time.append(f"{last_time.strftime('%H:%M:%S')}  ->  {real_time.strftime('%H:%M:%S')}")
+                miss_time.append(
+                    f"{last_time.strftime('%H:%M:%S')}  ->  {real_time.strftime('%H:%M:%S')}")
                 miss_timecode.append(f"{last_timecode}  ->  {real_timecode}")
                 temp_samp += real_row[1] - last_row[1]
-        temp_samp =time.strftime("%H:%M:%S", time.gmtime(temp_samp))
+        temp_samp = time.strftime("%H:%M:%S", time.gmtime(temp_samp))
         lose_profit = lose_profit * 5
         cursor.close()
         return miss_time, miss_timecode, temp_samp, lose_profit
@@ -70,8 +80,48 @@ def read_sqlite_table(start_rows, end_rows):
             print("Соединение с SQLite закрыто")
 
 
-
 def index(request):
+<<<<<<< HEAD
+    if request.method == 'POST':
+        form = TimeInterval_Form(request.POST)
+        if form.is_valid():
+            print(form.cleaned_data['start_time'])
+            request.session['times'] = [
+                str(form.cleaned_data['start_time']), str(form.cleaned_data['end_time'])]
+            return HttpResponseRedirect('statics')
+    else:
+        form = TimeInterval_Form()
+    #need_times = read_sqlite_table(1649774679, 1649774762)
+    content = {'form': form}
+    prikol(request)
+    return render(request, 'polls/index.html', content)
+
+
+def statics(request):
+    times = request.session.get('times', None)
+    print(times)
+    miss_time, miss_timecode, temp_samp, lose_profit = read_sqlite_table(
+        1649774679, 1649778786)
+    print(miss_time)
+    print(miss_timecode)
+    video = Video.objects.all()
+    content = {
+        'miss_time': miss_time,
+        'miss_timecode': miss_timecode,
+        'temp_samp': temp_samp,
+        'lose_profit': lose_profit,
+        'times': times,
+        "video": video,
+    }
+    return render(request, 'polls/statics.html', content)
+
+
+def prikol(request):
+    telemetrys = Telemetry.objects.all()
+    shift_cur = Shift.objects.all()
+    print(shift_cur[0].id)
+    print(telemetrys[0].detectionCoordinates)
+=======
     if (request.user.username == ''):
         print("Kal")
         return HttpResponseRedirect('/')
@@ -113,3 +163,4 @@ def statics(request):
             "video": video,
         }
         return render(request, 'polls/statics.html', content)
+>>>>>>> 58d116c0af2f88d0cb16093f7e8c859ef376b200
