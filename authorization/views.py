@@ -1,13 +1,18 @@
+from inspect import _void
 from urllib import response
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
+from django.contrib import messages
+from django.contrib.auth.views import LogoutView
+
 
 from .forms import LoginForm
 
 from django.shortcuts import redirect
 
 def user_login(request):
+    print(request.user)
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -24,4 +29,6 @@ def user_login(request):
                 #return HttpResponse('Invalid login')
     else:
         form = LoginForm()
+    
     return render(request, 'authorization/login.html', {'form': form})
+

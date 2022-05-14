@@ -95,7 +95,6 @@ def index(request):
   
 def statics(request):
     if (request.user.username == ''):
-        print("Kal")
         return HttpResponseRedirect('/')
     else:
         times = request.session.get('times', None)
