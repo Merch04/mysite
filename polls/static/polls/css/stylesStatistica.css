@@ -82,7 +82,13 @@ a {
     padding-top: 60px;
     width: 930px;
     text-align: center;
+<<<<<<< HEAD
     margin: 0 auto;
+=======
+    border: 3px black solid;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.5);
+>>>>>>> d855150 (master)
 }
 
 .common {
@@ -92,11 +98,20 @@ a {
     background-color: white;
 }
 
+<<<<<<< HEAD
 /* .visual {
     background-color: white;
     width: 950px;
     height: 909px;
 } */
+=======
+.videoContainer video {
+    margin-bottom: 30px;
+    background: black; 
+    padding: 9px;
+    box-shadow: 10px 5px 5px black;
+}
+>>>>>>> d855150 (master)
 
 /* свойства модального окна по умолчанию */
 .modal {

@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,12 +12,18 @@
 	<title>Statistics</title>
 
 	<!-- jQuery -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+
 	<!-- XDSoft DateTimePicker -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" integrity="sha256-DOS9W6NR+NFe1fUhEE0PGKY/fubbUCnOfTje2JMDw3Y=" crossorigin="anonymous" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js" integrity="sha256-FEqEelWI3WouFOo2VWP/uJfs1y8KJ++FLh2Lbqc8SJk=" crossorigin="anonymous"></script>
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css"
+		integrity="sha256-DOS9W6NR+NFe1fUhEE0PGKY/fubbUCnOfTje2JMDw3Y=" crossorigin="anonymous" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"
+		integrity="sha256-FEqEelWI3WouFOo2VWP/uJfs1y8KJ++FLh2Lbqc8SJk=" crossorigin="anonymous"></script>
 </head>
+
 <body>
 	<header class="header">
 		<div class="left nav">
@@ -30,42 +37,42 @@
 	<div class="borderGradient"></div>
 	<div class="container"></div>
 
-		<div id="openModalVideo" class="modal">
-			<div class="modal-dialog">
-			  	<div class="modal-content">
-					<div class="modal-header">
-				  		<h3 class="modal-title">Choose video</h3>
-				  		<a href="#close" title="Close" class="close">×</a>
-					</div>
-					<div class="modal-body">    
-				  		<p>...</p>
-					</div>
-			  	</div>
+	<div id="openModalVideo" class="modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title">Choose video</h3>
+					<a href="#close" title="Close" class="close">×</a>
+				</div>
+				<div class="modal-body">
+					<p>...</p>
+				</div>
 			</div>
 		</div>
+	</div>
 
-		<div id="openModal" class="modal">
-			<div class="modal-dialog">
-			  	<div class="modal-content">
-					<div class="modal-header">
-				  	<h3 class="modal-title">Statistic</h3>
-				  	<a href="#close" title="Close" class="close">×</a>
+	<div id="openModal" class="modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title">Statistic</h3>
+					<a href="#close" title="Close" class="close">×</a>
 				</div>
-				<div class="modal-body">    
-					
-				  	<div class="statistics" id="statistics">
+				<div class="modal-body">
+
+					<div class="statistics" id="statistics">
 						<form action="">
 							<p class="statisticBorder">Время отсутствия</p>
 							{% for time in miss_time %}
-								<input type="text" value='{{time}}' disabled>
-								<br>
+							<input type="text" value='{{time}}' disabled>
+							<br>
 							{% endfor %}
 						</form>
 						<form action="">
 							<p class="statisticBorder">Тайм-код</p>
 							{% for timecode in miss_timecode %}
-								<input type="text" value="{{timecode}}" disabled>
-								<br>				
+							<input type="text" value="{{timecode}}" disabled>
+							<br>
 							{% endfor %}
 						</form>
 						<form action="">
@@ -92,8 +99,9 @@
 			{% endfor %}
 		</div>
 		<div class="visual">
-			
+
 		</div>
 	</section>
 </body>
+
 </html>
