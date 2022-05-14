@@ -31,5 +31,3 @@ class Shift(models.Model):
     motion = models.JSONField()
     createdAt = models.DateField()
     updatedAt = models.DateField()
-
- 
