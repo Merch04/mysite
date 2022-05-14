@@ -21,6 +21,7 @@
 			{% endfor %}
 		</div>
 		<h1>Statistic</h1>
+		<hr>
 		<div class="statistics" id="statistics">
 			<form action="">
 				<p class="statisticBorder">Время отсутствия</p>
@@ -31,7 +32,10 @@
 			</form>
 			<form action="">
 				<p class="statisticBorder">Тайм-код</p>
-				<input type="text" value="">
+				{% for timecode in miss_timecode %}
+					<input type="text" value="{{timecode}}">
+					<br>				
+				{% endfor %}
 			</form>
 			<form action="">
 				<p class="statisticBorder">Убыток</p>

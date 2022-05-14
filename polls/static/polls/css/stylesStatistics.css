@@ -54,7 +54,7 @@ hr {
     margin: 0 auto;
 }
 
-.statisticBorder p {
+.statisticBorder {
     padding-bottom: 8px;
     margin-bottom: 8px;
     border-bottom: 1px gray solid;
