@@ -8,7 +8,7 @@ from .forms import DateForm  # new
 from django.contrib.auth.models import AnonymousUser
 from django.contrib.auth import logout
 import time
-from .models import Video
+from .models import Restoran, Video
 from .models import Shift, Telemetry, Video
 
 from ast import Try
@@ -75,6 +75,7 @@ def read_sqlite_table(start_rows, end_rows):
 
 
 def index(request):
+    hui(request)
     if (request.user.username == ''):
         return HttpResponseRedirect('/')
     else:
@@ -119,7 +120,5 @@ def statics(request):
         return render(request, 'polls/statics.html', content)
 
 
-# def hui(request):
-#     peremenaya = Telemetry.objects.filter(
-#         time__lt=1649774681, time__gt=1649774679)
-#     print([i.id for i in peremenaya])
+def hui(request):
+    peremenaya = Restoran.objects.all()[0].cams["1"]
