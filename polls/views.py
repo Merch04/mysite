@@ -1,3 +1,9 @@
+from datetime import datetime
+import sqlite3
+from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from email.header import Header
+from asyncio.windows_events import NULL
 from .forms import DateForm  # new
 from django.contrib.auth.models import AnonymousUser
 from django.contrib.auth import logout
@@ -6,18 +12,21 @@ from .models import Video
 from .models import Shift, Telemetry, Video
 
 from ast import Try
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
-import sqlite3
-from datetime import datetime
+<< << << < HEAD
+== == == =
+>>>>>> > 1456a839c29fce541e84e72326209dd2aa4e4d58
+<< << << < HEAD
+
+== == == =
+>>>>>> > 1456a839c29fce541e84e72326209dd2aa4e4d58
 
 
 def read_sqlite_table(start_rows, end_rows):
     profit_coef = {
-        '9': 0.4,
-        '12': 1,
-        '18': 0.5
-    }
+    '9': 0.4,
+    '12': 1,
+    '18': 0.5
+}
     try:
         object_arr = Telemetry.objects.filter(
             time__gt=start_rows, time__lt=end_rows)
@@ -37,8 +46,8 @@ def read_sqlite_table(start_rows, end_rows):
 
                 time_kirill = str(last_time).split(" ")[1].split(":")[0]
 
-                last_timecode = last_row.time - start_rows
-                real_timecode = real_row.time - start_rows
+                last_timecode = last_row[1] - start_rows
+                real_timecode = real_row[1] - start_rows
                 last_timecode = time.strftime(
                     "%H:%M:%S", time.gmtime(last_timecode))
                 real_timecode = time.strftime(
@@ -46,19 +55,26 @@ def read_sqlite_table(start_rows, end_rows):
 
                 if int(time_kirill) >= 18:
                     lose_profit += profit_coef['18'] * \
-                        (real_row.time - last_row.time)
+                        (real_row[1] - last_row[1])
                 elif int(time_kirill) >= 12:
                     lose_profit += profit_coef['12'] * \
-                        (real_row.time - last_row.time)
+                        (real_row[1] - last_row[1])
                 elif int(time_kirill) >= 9:
                     lose_profit += profit_coef['9'] * \
-                        (real_row.time - last_row.time)
+                        (real_row[1] - last_row[1])
 
                 miss_time.append(
                     f"{last_time.strftime('%H:%M:%S')}  ->  {real_time.strftime('%H:%M:%S')}")
                 miss_timecode.append(f"{last_timecode}  ->  {real_timecode}")
+
+
+<< << << < HEAD
                 temp_samp += real_row.time - last_row.time
         temp_samp = time.strftime("%H:%M:%S", time.gmtime(temp_samp))
+=======
+                temp_samp += real_row[1] - last_row[1]
+        temp_samp =time.strftime("%H:%M:%S", time.gmtime(temp_samp))
+>>>>>>> 1456a839c29fce541e84e72326209dd2aa4e4d58
         lose_profit = lose_profit * 5
 
         return miss_time, miss_timecode, temp_samp, lose_profit
@@ -68,8 +84,12 @@ def read_sqlite_table(start_rows, end_rows):
         return None
 
 
-def index(request):
 
+def index(request):
+<<<<<<< HEAD
+
+=======
+>>>>>>> 1456a839c29fce541e84e72326209dd2aa4e4d58
     if (request.user.username == ''):
         return HttpResponseRedirect('/')
     else:
@@ -94,7 +114,6 @@ def index(request):
 
 def statics(request):
     if (request.user.username == ''):
-        print("Kal")
         return HttpResponseRedirect('/')
     else:
         times = request.session.get('times', None)
@@ -113,9 +132,12 @@ def statics(request):
             "video": video,
         }
         return render(request, 'polls/statics.html', content)
+<<<<<<< HEAD
 
 
 # def hui(request):
 #     peremenaya = Telemetry.objects.filter(
 #         time__lt=1649774681, time__gt=1649774679)
 #     print([i.id for i in peremenaya])
+=======
+>>>>>>> 1456a839c29fce541e84e72326209dd2aa4e4d58

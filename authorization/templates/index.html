@@ -100,12 +100,17 @@ input[type='password'] {
     margin-bottom: 5px;
     font-size: 18px;
 }
+
 /* тут так все хреново сделано, просто ужас */
+/* кто это блять пизданул? м? */
+
     </style>
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
     <div class="container">
+        <a href="{% url 'logout' %}"> Exit</a>
+        
         <h1 calss="Text">Login</h1>
         <div class="">
     </div>
