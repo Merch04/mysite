@@ -1,12 +1,19 @@
 from ast import Try
+from asyncio.windows_events import NULL
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 import sqlite3
 from datetime import datetime
+<<<<<<< HEAD
 from .forms import TimeInterval_Form
 from .models import Shift, Telemetry, Video
+=======
+from .forms import DateForm #new
+from .models import Video
+>>>>>>> 58d116c0af2f88d0cb16093f7e8c859ef376b200
 import time
-
+from django.contrib.auth import logout
+from django.contrib.auth.models import AnonymousUser
 
 def read_sqlite_table(start_rows, end_rows):
     profit_coef = {
@@ -74,6 +81,7 @@ def read_sqlite_table(start_rows, end_rows):
 
 
 def index(request):
+<<<<<<< HEAD
     if request.method == 'POST':
         form = TimeInterval_Form(request.POST)
         if form.is_valid():
@@ -113,3 +121,46 @@ def prikol(request):
     shift_cur = Shift.objects.all()
     print(shift_cur[0].id)
     print(telemetrys[0].detectionCoordinates)
+=======
+    if (request.user.username == ''):
+        print("Kal")
+        return HttpResponseRedirect('/')
+    else:
+        if request.method == 'POST':     
+            
+            form_date = DateForm(request.POST) #new
+            if  form_date.is_valid(): #new
+                
+                print('ДАТА С ВИДЖЕТА')
+                print(form_date.cleaned_data['s_date']) #new
+                print(form_date.cleaned_data['e_date']) #new
+                #request.session['times'] = [str(form.cleaned_data['start_time']), str(form.cleaned_data['end_time'])]
+
+                return HttpResponseRedirect('statics')
+        else:
+                form_date = DateForm() #new
+        #need_times = read_sqlite_table(1649774679, 1649774762)
+        content = {'form_date': form_date}
+        return render(request, 'polls/index.html', content)
+  
+def statics(request):
+    if (request.user.username == ''):
+        print("Kal")
+        return HttpResponseRedirect('/')
+    else:
+        times = request.session.get('times', None)
+        print(times)
+        miss_time, miss_timecode, temp_samp, lose_profit = read_sqlite_table(1649774679, 1649778786)
+        print(miss_time)
+        print(miss_timecode)
+        video=Video.objects.all()
+        content = {
+            'miss_time' : miss_time,
+            'miss_timecode' : miss_timecode,
+            'temp_samp': temp_samp,
+            'lose_profit' : lose_profit,
+            'times': times,
+            "video": video,
+        }
+        return render(request, 'polls/statics.html', content)
+>>>>>>> 58d116c0af2f88d0cb16093f7e8c859ef376b200

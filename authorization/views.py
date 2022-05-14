@@ -1,8 +1,11 @@
+from urllib import response
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
+
 from .forms import LoginForm
 
+from django.shortcuts import redirect
 
 def user_login(request):
     if request.method == 'POST':
