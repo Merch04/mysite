@@ -19,9 +19,12 @@
 </head>
 <body>
 	<header class="header">
-		<div class="back">
+		<div class="left nav">
 			<a href="http://127.0.0.1:8000/polls/">Back to Period</a>
-			<a href="#openModal">Show Statistic</a>
+			<a href="#">Change video</a>
+		</div>
+		<div class="right nav">
+			<a href="#openModal" name="showStatistic">Show Statistic</a>
 		</div>
 	</header>
 	<div class="container"></div>
@@ -68,9 +71,6 @@
 				<source src="{{x.video.url}}" type="video/mp4">
 			</video>
 			{% endfor %}
-			<div class="videobtn d-flex">
-				<a href="#">Change video</a>
-			</div>
 		</div>
 		<div class="visual">
 			

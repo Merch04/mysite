@@ -6,8 +6,8 @@
 body {
     max-width: 100%;
     font-size: 16px;
-    background: rgb(156,169,244);
-    background: linear-gradient(90deg, rgba(156,169,244,1) 4%, rgba(232,163,247,1) 84%);
+    background: rgb(227,211,252);
+    background: linear-gradient(90deg, rgba(227,211,252,1) 0%, rgba(223,209,226,1) 56%, rgba(130,133,148,1) 100%);
 }
 
 a {

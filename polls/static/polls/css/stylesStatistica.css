@@ -27,12 +27,16 @@ a {
     display: flex;
 }
 
-.header .back {
+.header .right {
+    margin-left: auto;
+}
+
+.header .nav {
     display: flex;
     align-items: center;
 }
 
-.header .back a {
+.header .nav a {
     text-transform: uppercase;
     font-family: Comfortaa, Light300;
     font-weight: 700;
@@ -73,28 +77,6 @@ a {
     background-color: #1f1e1e;
     width: 950px;
     height: 910px;
-}
-
-.videoContainer a {
-    padding: 20px;
-    text-transform: uppercase;
-    font-family: Comfortaa, Light300;
-    font-weight: 700;
-    font-size: 0.875em;
-    background-color: rgb(35, 35, 46);
-    color: #f8f8f8;
-    border: 3px black solid;
-}
-
-.videoContainer a:hover {
-    background-color: rgb(205, 191, 211);
-    color: black;
-    transition: 0.5s;
-    border-color: black;
-}
-
-.videobtn {
-    margin-left: 45px;
 }
 
 /* свойства модального окна по умолчанию */
