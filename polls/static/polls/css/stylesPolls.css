@@ -28,13 +28,18 @@ p, h1 {
     display: flex;
 }
 
+.kostili {
+    height: 5px;
+    padding-top: 278px;
+}
+
 .container {
-    padding-top: 136px;
+    padding: 32px 20px;
     margin-top: 286px;
     width: 350px;
     margin: 0 auto;
-    border: 1px black solid;
-    border-radius: 2px;
+    border: 2px black solid;
+    border-radius: 16px;
     background-color: #fff;
 }
 
