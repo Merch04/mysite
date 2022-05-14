@@ -6,8 +6,7 @@ body {
     margin: 0;
     max-width: 100%;
     font-size: 16px;
-    background: rgb(156,169,244);
-    background: linear-gradient(90deg, rgba(156,169,244,1) 4%, rgba(232,163,247,1) 84%);
+
 }
 
 p, h1 {
@@ -27,7 +26,6 @@ h1 {
     margin-top: 36px;
     box-shadow: 7px 7px 2px 1px rgba(0, 0, 0, 0.2);
     margin-bottom: 44px;
-    border: 4px black solid;
 }
 
 .statistics {
