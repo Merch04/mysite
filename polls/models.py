@@ -31,3 +31,9 @@ class Shift(models.Model):
     motion = models.JSONField()
     createdAt = models.DateField()
     updatedAt = models.DateField()
+
+
+class Restoran(models.Model):
+    id = models.TextField(primary_key=True)
+    place = models.TextField()
+    cams = models.JSONField()

@@ -8,13 +8,18 @@ from .forms import DateForm  # new
 from django.contrib.auth.models import AnonymousUser
 from django.contrib.auth import logout
 import time
-from .models import Video
+from .models import Restoran, Video
 from .models import Shift, Telemetry, Video
 
 from ast import Try
 
 
 def read_sqlite_table(start_rows, end_rows):
+    """dt = datetime.strptime(times[0])
+    start_rows = datetime.timestamp(dt)
+    dt = datetime.strptime(times[1])
+    end_rows = datetime.timestamp(dt)"""
+    
     profit_coef = {
         '9': 0.4,
         '12': 1,
@@ -23,8 +28,6 @@ def read_sqlite_table(start_rows, end_rows):
     try:
         object_arr = Telemetry.objects.filter(
             time__gt=start_rows, time__lt=end_rows)
-        print("Всего строк:  ", len(object_arr))
-        print("Вывод каждой строки")
         miss_time = []
         miss_timecode = []
         temp_samp = 0
@@ -75,6 +78,7 @@ def read_sqlite_table(start_rows, end_rows):
 
 
 def index(request):
+    hui(request)
     if (request.user.username == ''):
         return HttpResponseRedirect('/')
     else:
@@ -84,14 +88,14 @@ def index(request):
             if form_date.is_valid():  # new
 
                 print('ДАТА С ВИДЖЕТА')
-                print(form_date.cleaned_data['s_date'])  # new
-                print(form_date.cleaned_data['e_date'])  # new
-                # request.session['times'] = [str(form.cleaned_data['start_time']), str(form.cleaned_data['end_time'])]
+                start_date = str(form_date.cleaned_data['s_date'])[0:-6]
+                end_date = str(form_date.cleaned_data['e_date'])[0:-6]
+                request.session['times'] = [start_date, end_date]
 
                 return HttpResponseRedirect('statics')
         else:
-            form_date = DateForm()  # new
-        # need_times = read_sqlite_table(1649774679, 1649774762)
+            form_date = DateForm()
+            
         content = {'form_date': form_date}
 
         return render(request, 'polls/index.html', content)
@@ -102,24 +106,18 @@ def statics(request):
         return HttpResponseRedirect('/')
     else:
         times = request.session.get('times', None)
-        print(times)
         miss_time, miss_timecode, temp_samp, lose_profit = read_sqlite_table(
             1649774679, 1649778786)
-        print(miss_time)
-        print(miss_timecode)
         video = Video.objects.all()
         content = {
             'miss_time': miss_time,
             'miss_timecode': miss_timecode,
             'temp_samp': temp_samp,
             'lose_profit': lose_profit,
-            'times': times,
             "video": video,
         }
         return render(request, 'polls/statics.html', content)
 
 
-# def hui(request):
-#     peremenaya = Telemetry.objects.filter(
-#         time__lt=1649774681, time__gt=1649774679)
-#     print([i.id for i in peremenaya])
+def hui(request):
+    peremenaya = Restoran.objects.all()[0].cams["1"]
