@@ -54,10 +54,14 @@ a {
 }
 
 .statistics form {
-    border: 1px rgb(205, 191, 211) solid;
-    border-radius: 5px;
     padding-bottom: 10px;
     width: 210px;
+}
+
+.statistics p {
+    border-bottom: 1px #f8f8f8 solid ;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
 }
 
 .statistics input {
