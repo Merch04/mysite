@@ -1,17 +1,5 @@
 from django import forms
 from polls.models import Choise_video, Shift
-
-#new
-class DateForm(forms.Form):
-    s_date = forms.DateTimeField(
-        widget=forms.DateInput(
-            attrs={'class': 'dateStyles commonStyle'}), 
-        input_formats=['%d/%m/%Y %H:%M'])
-    e_date = forms.DateTimeField(
-        widget=forms.DateInput(
-            attrs={'class': 'dateStyles commonStyle'}), 
-        input_formats=['%d/%m/%Y %H:%M'])
-    
     
 class ChoiseVideoForm(forms.ModelForm):
     class Meta:
@@ -19,9 +7,9 @@ class ChoiseVideoForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             "start_date": forms.DateInput(
-                attrs={'class': 'dateStyles commonStyle'}),
+                attrs={'class': 'dateStyles commonStyle', 'autocomplete': 'off'}),
             "end_date": forms.DateInput(
-                attrs={'class': 'dateStyles commonStyle'})
+                attrs={'class': 'dateStyles commonStyle', 'autocomplete': 'off'})
         }
 
     def __init__(self, *args, **kwargs):
