@@ -196,6 +196,7 @@ button:focus {
     height: 50px;
     width: 175px;
     border-color: black;
+    text-transform: uppercase;
 }
 
 .button:hover {
