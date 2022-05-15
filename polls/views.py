@@ -68,7 +68,7 @@ def Customer_counts(times, shift):
     First = True
     ErrorTime = 0
     Loop = False
-    ErrorCounter = 20
+    ErrorCounter = 1
     TimeToClient = 5
     TimeCustomer = {
         'StartTime': 0,
