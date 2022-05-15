@@ -1,5 +1,5 @@
 from django import forms
-from polls.models import Choise_video, Restaurants
+from polls.models import Choise_video, Shift
 
 #new
 class DateForm(forms.Form):
@@ -26,18 +26,14 @@ class ChoiseVideoForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['restaurants'].queryset = Restaurants.objects.none()
-        
+        self.fields['shift'].queryset = Shift.objects.none()
         
         if 'restaurants' in self.data:
-            print("Govna")
             try:
-                shift_id = int(self.data.get('shift'))
-                self.fields['restaurants'].queryset = Restaurants.objects.filter(shift_id=shift_id).order_by('name')
+                restaurants_id = int(self.data.get('restaurants'))
+                self.fields['shift'].queryset = Shift.objects.filter(restaurants_id=restaurants_id)
             except (ValueError, TypeError):
                 pass  # invalid input from the client; ignore and fallback to empty City queryset
         elif self.instance.pk:
-            print("dermo")
-            self.fields['restaurants'].queryset = self.instance.shift.restaurants_set.order_by('name')
-            
+            self.fields['shift'].queryset = self.instance.shift.shift_set
 

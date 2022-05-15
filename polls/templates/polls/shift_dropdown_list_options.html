@@ -1,0 +1,4 @@
+<option value="">---------</option>
+{% for shift in shifts %}
+<option value="{{ shift.pk }}">{{ shift.id }}</option>
+{% endfor %}

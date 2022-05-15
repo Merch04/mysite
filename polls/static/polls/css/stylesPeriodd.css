@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    max-width: 100%;
+    font-size: 16px;
+    background: rgb(156,169,244);
+    background: linear-gradient(90deg, rgba(156,169,244,1) 4%, rgba(232,163,247,1) 84%);
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+p, h1 {
+    font-family: Comfortaa, Light300;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.header {
+    max-width: 100%;
+    height: 60px;
+    background-color: white;
+    display: flex;
+}
+
+.borderGradient {
+    height: 1px;
+    background: rgb(232,153,247);
+    background: linear-gradient(90deg, rgba(232,153,247,1) 0%, rgba(156,169,244,1) 100%);
+}
+
+.header .right {
+    margin-left: auto;
+}
+
+.header .nav {
+    display: flex;
+    align-items: center;
+}
+
+.header .nav a {
+    text-transform: uppercase;
+    font-family: Comfortaa, Light300;
+    font-weight: 700;
+    font-size: 0.875em;
+    color: black;
+    margin-left: 20px;
+    padding-right: 20px;
+}
+
+.container {
+    padding-top: 200px;
+    padding-bottom: 315px;
+    width: 1000px;
+    background-color: #f8f8f8;
+    margin: 0 auto;
+}
+
+.timeAndDate {
+    width: 276px;
+    justify-content: right;
+    margin-bottom: 5px;
+}
+
+.timeAndDate .signDate {
+    margin-right: 70px;
+}
+
+.containerField {
+    padding: 32px 20px;
+    margin-top: 286px;
+    width: 415px;
+    margin: 0 auto;
+    border: 2px black solid;
+    border-radius: 16px;
+    background: rgb(156,169,244);
+    background: linear-gradient(90deg, rgba(156,169,244,1) 4%, rgba(232,163,247,1) 84%);
+}
+
+.formContainer {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.timeCode {
+    margin-left: 30px;
+}
+
+.margin_11_px {
+    margin-bottom: 11px;
+}
+
+.margin_32_px {
+    margin-bottom: 32px;
+}
+
+.text {
+    margin-right: 20px;
+    text-align: right;
+}
+
+.date {
+    width: 106px;
+    margin-right: 20px;
+}
+
+.time {
+    width: 75px;
+}
+
+.button_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.button {
+    padding: 10px 30px;
+    font-weight: 700;
+    font-size: 0.875em;
+    background-color: rgb(35, 35, 46);
+    color: #f8f8f8;
+    height: 50px;
+    width: 175px;
+    border-color: black;
+}
+
+.button:hover {
+    background-color: #fff;
+    color: black;
+    transition: 0.5s;
+    border-color: black;
+}
+
+.list {
+    width: 175px;
+    margin: 0 auto;
+}
+
+select {
+    background-color: #fff;
+    color: black;
+    font-family: Comfortaa, Light300;;
+    text-align: center;
+    margin-bottom: 18px;
+    appearance: none;
+    border: 2px black solid;
+    height: 40px;
+    width: 175px;
+}
+
+select:focus {
+    outline: none !important;
+}

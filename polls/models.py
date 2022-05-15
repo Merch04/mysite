@@ -23,6 +23,13 @@ class Telemetry(models.Model):
     shiftId = models.TextField()
 
 
+class Restaurants(models.Model):
+    name = models.TextField()
+    place = models.TextField()
+    def __str__(self):
+        return self.name
+
+
 class Shift(models.Model):
     id = models.TextField(primary_key=True)
     filmingTime = models.JSONField()
@@ -30,16 +37,9 @@ class Shift(models.Model):
     motion = models.JSONField()
     createdAt = models.DateField()
     updatedAt = models.DateField()
+    restaurants = models.ForeignKey(Restaurants, on_delete=models.CASCADE)
     def __str__(self):
         return self.id
-
-
-class Restaurants(models.Model):
-    name = models.TextField()
-    place = models.TextField()
-    shift = models.ForeignKey(Shift, on_delete=models.SET_NULL, blank=True, null=True)
-    def __str__(self):
-        return self.name
 
 
 class Choise_video(models.Model):
