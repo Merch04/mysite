@@ -53,8 +53,10 @@
     <div class="kostili"></div>
     <div class="containerFull">
         <div class="info" id="blablabla">
-            <p>aboba</p>
-            <button id="close">close</button>
+            <ul>
+                <li><img src="{{gif_anime}}" alt="фффф"></li>
+                <li><button id="close">close</button></li>
+            </ul>
         </div>
 
         <div class="container">
@@ -76,18 +78,13 @@
                             {{form_date.end_date}}
                         </div>
                     </div>
-                    <div class="date">
-                        {{form_date.start_date}}
-                        {{form_date.end_date}}
+                    <div class="list">
+                        {{form_date.restaurants}}
+                        {{form_date.shift}}
                     </div>
-            </div>
-            <div class="list">
-                {{form_date.restaurants}}
-                {{form_date.shift}}
-            </div>
-            <div class="button_container">
-                <input type="submit" value="Confirm" class="button">
-                <img src="{{gif_anime}}" alt="фффф">
+                    <div class="button_container">
+                        <input type="submit" value="Confirm" class="button">
+                    </div>
             </div>
             </form>
         </div>
@@ -134,5 +131,4 @@
         });
     </script>
 </body>
-
 </html>

@@ -51,6 +51,11 @@ p, h1 {
     font-family: Comfortaa, Light300;
 }
 
+ul, li {
+    display: block;
+    padding: 0;
+}
+
 .d-flex {
     display: flex;
 }
@@ -193,9 +198,4 @@ select {
 
 select:focus {
     outline: none !important;
-}
-
-.info {
-    width: 60px;
-    background-color: red;
 }
