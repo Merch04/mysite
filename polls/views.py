@@ -1,16 +1,10 @@
 from datetime import datetime
 import sqlite3
 from django.shortcuts import render
-from django.http import HttpResponseRedirect, JsonResponse
-from email.header import Header
-from asyncio.windows_events import NULL
-from .forms import DateForm  # new
-from django.contrib.auth.models import AnonymousUser
-from django.contrib.auth import logout
+from django.http import HttpResponseRedirect
 import time
-from .models import Shift, Telemetry, Video, Restaurants
+from .models import Shift, Telemetry, Video
 from .forms import ChoiseVideoForm
-from ast import Try
 
 
 def read_sqlite_table(times, shift):
