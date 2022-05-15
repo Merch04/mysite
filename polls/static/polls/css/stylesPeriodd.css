@@ -1,3 +1,23 @@
+#blablabla {
+    display: none;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+    animation-name: fadeIn;
+}
+  
+#blablabla.open {
+   display: block;
+}
+  
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+}
+    to {
+        opacity: 1;
+    }
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -51,7 +71,7 @@ p, h1 {
     align-items: center;
 }
 
-.header .nav a {
+.header .nav a, button {
     text-transform: uppercase;
     font-family: Comfortaa, Light300;
     font-weight: 700;
@@ -59,6 +79,8 @@ p, h1 {
     color: #c9c9c9;
     margin-left: 20px;
     padding-right: 20px;
+    background-color: #161616;
+    border: none;
 }
 
 .container {
@@ -164,4 +186,9 @@ select {
 
 select:focus {
     outline: none !important;
+}
+
+.info {
+    width: 60px;
+    background-color: red;
 }
