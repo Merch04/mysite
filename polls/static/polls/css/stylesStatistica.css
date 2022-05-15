@@ -72,28 +72,17 @@ a {
 }
 
 .statistics input {
-    text-align: center;
+    background-color: #23232e;
     border: none;
-    background-color: rgb(35, 35, 46);
+    text-align: center;
     color: #f8f8f8;
 }
 
 .videoContainer {
-
     padding-top: 60px;
     width: 930px;
     text-align: center;
-
     margin: 0 auto;
-
-    border: 3px black solid;
-    border-radius: 16px;
-    background: rgba(0, 0, 0, 0.5);
-
-}
-
-video {
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .btns {
@@ -125,45 +114,6 @@ video {
     margin: 0 auto;
     height: 909px;
     background-color: #181818;
-}
-
-.videoContainer video {
-    margin-bottom: 30px;
-    background: black;
-    padding: 9px;
-    box-shadow: 10px 5px 5px black;
-    margin-top: 60px;
-    width: 930px;
-    text-align: center;
-}
-
-.visual {
-    background-color: #1f1e1e;
-    width: 950px;
-    height: 910px;
-}
-
-.videoContainer a {
-    padding: 20px;
-    text-transform: uppercase;
-    font-family: Comfortaa, Light300;
-    font-weight: 700;
-    font-size: 0.875em;
-    background-color: rgb(35, 35, 46);
-    color: #f8f8f8;
-    border: 3px black solid;
-}
-
-
-.videoContainer a:hover {
-    background-color: rgb(205, 191, 211);
-    color: black;
-    transition: 0.5s;
-    border-color: black;
-}
-
-.videobtn {
-    margin-left: 45px;
 }
 
 /* свойства модального окна по умолчанию */
