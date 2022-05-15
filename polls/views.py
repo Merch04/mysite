@@ -62,6 +62,14 @@ def read_sqlite_table(times, shift):
 
 
 def Customer_counts(times, shift):
+    dt = datetime.strptime(times[0], "%Y-%m-%d %H:%M:%S")
+    start_time = datetime.timestamp(dt) + 25200
+    dt = datetime.strptime(times[1], "%Y-%m-%d %H:%M:%S")
+    end_time = datetime.timestamp(dt) + 25200
+
+    if len(Telemetry.objects.filter(time__gt=start_time, time__lt=end_time, shiftId=shift[0])) == 0:
+        return None
+
     clients = []
     First = True
     ErrorTime = 0
@@ -73,10 +81,6 @@ def Customer_counts(times, shift):
         'EndTime': 0,
         'SumTime': 0
     }
-    dt = datetime.strptime(times[0], "%Y-%m-%d %H:%M:%S")
-    start_time = datetime.timestamp(dt) + 25200
-    dt = datetime.strptime(times[1], "%Y-%m-%d %H:%M:%S")
-    end_time = datetime.timestamp(dt) + 25200
 
     for x in Telemetry.objects.filter(time__gt=start_time, time__lt=end_time, shiftId=shift[0]):
 
@@ -184,9 +188,13 @@ def index(request):
                 start_date = str(form_date.cleaned_data['start_date'])[0:-6]
                 end_date = str(form_date.cleaned_data['end_date'])[0:-6]
                 shift = str(form_date.cleaned_data['shift'])
+
+                if shift == "None":
+
+                    return HttpResponseRedirect('/polls/')
+
                 request.session['times'] = [start_date, end_date]
                 request.session['shiftId'] = [shift]
-
                 return HttpResponseRedirect('statics')
         else:
             form_date = ChoiseVideoForm()
@@ -202,12 +210,19 @@ def statics(request):
     else:
         times = request.session.get('times', None)
         shift_id = request.session.get('shiftId', None)
+
         customers = Customer_counts(times, shift_id)
+        if customers == None:
+            average_time = str(" - ")
+            customers = ''
+        else:
+            average_time = average_time_customers(customers)
+
         miss_time, miss_timecode, temp_samp = read_sqlite_table(
             times, shift_id)
-        average_time = average_time_customers(customers)
+
         video = Video.objects.filter(shiftId=shift_id[0])
-        print(len(customers), average_time)
+
         content = {
             'miss_time': miss_time,
             'miss_timecode': miss_timecode,
