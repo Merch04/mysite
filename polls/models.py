@@ -30,14 +30,6 @@ class Shift(models.Model):
     motion = models.JSONField()
     createdAt = models.DateField()
     updatedAt = models.DateField()
-<<<<<<< HEAD
-
-
-class Restoran(models.Model):
-    id = models.TextField(primary_key=True)
-    place = models.TextField()
-    cams = models.JSONField()
-=======
     def __str__(self):
         return self.id
 
@@ -58,4 +50,3 @@ class Choise_video(models.Model):
 
     
     
->>>>>>> 77e441dbaf1f81083b48234d9dc1a98dc5b3268d
