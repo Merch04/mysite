@@ -88,6 +88,8 @@ def index(request):
             if form_date.is_valid():  # new
 
                 print('ДАТА С ВИДЖЕТА')
+                print('start time: ', str(form_date.cleaned_data['s_date'])[0:-6])
+                print('end time: ', str(form_date.cleaned_data['e_date'])[0:-6])
                 start_date = str(form_date.cleaned_data['s_date'])[0:-6]
                 end_date = str(form_date.cleaned_data['e_date'])[0:-6]
                 request.session['times'] = [start_date, end_date]

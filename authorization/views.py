@@ -32,3 +32,5 @@ def user_login(request):
     
     return render(request, 'authorization/login.html', {'form': form})
 
+def redir(request):
+    return HttpResponseRedirect('/login/')
