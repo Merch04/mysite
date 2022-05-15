@@ -51,36 +51,40 @@
         </div>
     </header>
     <div class="kostili"></div>
-    <div class="info" id="blablabla">
-        <p>aboba</p>
-    </div>
-    <div class="container">
-        <div class="containerField">
-            <h1>Period</h1>
-            <div class="timeAndDate d-flex">
-                <p class="signDate">Date</p>
-                <!-- <p class="signTime">Time</p> -->
-            </div>
-            <form method="post" id="personForm" data-shifts-url="{% url 'ajax_load_shifts' %}">
-                {% csrf_token %}
-                <div class="timeCode d-flex">
-                    <div class="text">
-                        <p class="margin_11_px">From</p>
-                        <p class="margin_32_px">To</p>
+    <div class="containerFull">
+        <div class="info" id="blablabla">
+            <p>aboba</p>
+            <button id="close">close</button>
+        </div>
+        
+        <div class="container">
+            <div class="containerField">
+                <h1>Period</h1>
+                <div class="timeAndDate d-flex">
+                    <p class="signDate">Date</p>
+                    <!-- <p class="signTime">Time</p> -->
+                </div>
+                <form method="post" id="personForm" data-shifts-url="{% url 'ajax_load_shifts' %}">
+                    {% csrf_token %}
+                    <div class="timeCode d-flex">
+                        <div class="text">
+                            <p class="margin_11_px">From</p>
+                            <p class="margin_32_px">To</p>
+                        </div>
+                        <div class="date">
+                            {{form_date.start_date}}
+                            {{form_date.end_date}}
+                        </div> 
                     </div>
-                    <div class="date">
-                        {{form_date.start_date}}
-                        {{form_date.end_date}}
-                    </div> 
-                </div>
-                <div class="list">
-                    {{form_date.restaurants}}
-                    {{form_date.shift}}
-                </div>
-                <div class="button_container">
-                    <input type="submit" value="Confirm" class="button">
-                </div>
-            </form>     
+                    <div class="list">
+                        {{form_date.restaurants}}
+                        {{form_date.shift}}
+                    </div>
+                    <div class="button_container">
+                        <input type="submit" value="Confirm" class="button">
+                    </div>
+                </form>     
+            </div>
         </div>
     </div>
 

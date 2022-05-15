@@ -3,6 +3,8 @@
     animation-duration: 1.5s;
     animation-fill-mode: both;
     animation-name: fadeIn;
+    z-index: 9;
+    position: absolute;
 }
   
 #blablabla.open {
@@ -17,6 +19,11 @@
         opacity: 1;
     }
 }
+
+.containerFull {
+    position: relative;
+}
+
 
 * {
     box-sizing: border-box;
