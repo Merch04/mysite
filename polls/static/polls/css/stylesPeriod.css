@@ -140,7 +140,6 @@ p, h1 {
 
 .button:hover {
     background-color: #c9c9c9;
-
     color: black;
     transition: 0.5s;
     border-color: black;
