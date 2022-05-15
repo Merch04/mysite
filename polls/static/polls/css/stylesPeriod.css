@@ -67,7 +67,7 @@ ul, p {
 }
 
 .info {
-    padding-left: 25px;
+    padding-left: 27px;
 }
 
 .header {
@@ -105,7 +105,7 @@ button:focus {
 
 .container {
     padding-top: 200px;
-    padding-bottom: 315px;
+    padding-bottom: 270px;
     width: 1300px;
     background-color: #181818;
     margin: 0 auto;
@@ -206,4 +206,8 @@ select {
 
 select:focus {
     outline: none !important;
+}
+
+.list p {
+    margin-bottom: 5px;
 }
