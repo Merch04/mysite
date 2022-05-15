@@ -6,8 +6,8 @@
 body {
     max-width: 100%;
     font-size: 16px;
-    background: rgb(227,211,252);
-    background: linear-gradient(90deg, rgba(227,211,252,1) 0%, rgba(223,209,226,1) 56%, rgba(130,133,148,1) 100%);
+    background: rgb(156,169,244);
+    background: linear-gradient(90deg, rgba(156,169,244,1) 4%, rgba(232,163,247,1) 84%);
 }
 
 a {
@@ -15,9 +15,10 @@ a {
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 24px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
 }
 
 p, h1 {
@@ -26,6 +27,46 @@ p, h1 {
 
 .d-flex {
     display: flex;
+}
+
+.header {
+    max-width: 100%;
+    height: 60px;
+    background: white;
+    display: flex;
+}
+
+.borderGradient {
+    height: 1px;
+    background: rgb(232,153,247);
+    background: linear-gradient(90deg, rgba(232,153,247,1) 0%, rgba(156,169,244,1) 100%);
+}
+
+.header .right {
+    margin-left: auto;
+}
+
+.header .nav {
+    display: flex;
+    align-items: center;
+}
+
+.header .nav a {
+    text-transform: uppercase;
+    font-family: Comfortaa, Light300;
+    font-weight: 700;
+    font-size: 0.875em;
+    color: black;
+    margin-left: 20px;
+    padding-right: 20px;
+}
+
+.container {
+    padding-top: 200px;
+    padding-bottom: 315px;
+    width: 1000px;
+    background-color: #f8f8f8;
+    margin: 0 auto;
 }
 
 .timeAndDate {
@@ -38,19 +79,15 @@ p, h1 {
     margin-right: 70px;
 }
 
-.kostili {
-    height: 5px;
-    padding-top: 278px;
-}
-
-.container {
+.containerField {
     padding: 32px 20px;
     margin-top: 286px;
-    width: 350px;
+    width: 415px;
     margin: 0 auto;
     border: 2px black solid;
     border-radius: 16px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgb(156,169,244);
+    background: linear-gradient(90deg, rgba(156,169,244,1) 4%, rgba(232,163,247,1) 84%);
 }
 
 .formContainer {
@@ -97,13 +134,12 @@ p, h1 {
     background-color: rgb(35, 35, 46);
     color: #f8f8f8;
     height: 50px;
-    width: 345px;
-    border-radius: 8px;
+    width: 175px;
     border-color: black;
 }
 
 .button:hover {
-    background-color: rgb(205, 191, 211);
+    background-color: #fff;
     color: black;
     transition: 0.5s;
     border-color: black;
@@ -115,7 +151,7 @@ p, h1 {
 }
 
 select {
-    background-color: rgb(205, 191, 211);
+    background-color: #fff;
     color: black;
     font-family: Comfortaa, Light300;;
     text-align: center;

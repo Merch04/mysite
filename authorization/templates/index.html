@@ -20,20 +20,17 @@
 }
 
 h1 {
+    margin-top: 100px;
     margin-bottom: 40px;
 }
 
 body {
-    height: 0px;
-    max-width: 100%;
-    margin: 0;
+    height: 960px;
     font-size: 16px;
-    background: rgb(227,211,252);
-    background: linear-gradient(90deg, rgba(227,211,252,1) 0%, rgba(223,209,226,1) 56%, rgba(130,133,148,1) 100%);
+    background: rgb(156,169,244);
+    background: linear-gradient(90deg, rgba(156,169,244,1) 4%, rgba(232,163,247,1) 84%);
     font-family: Comfortaa, Light300;
-    text-align: center;
-    margin: 5px;
-    margin-top: 15%;    
+    text-align: center;   
 }
 
 .myfieldclass{
@@ -101,6 +98,19 @@ input[type='password'] {
     font-size: 18px;
 }
 
+.full {
+    margin-top: 100px;
+    width: 1000px;
+    height: 970px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.kostili {
+    height: 1px;
+    margin-bottom: 100px;
+}
+
 /* тут так все хреново сделано, просто ужас */
 /* кто это блять пизданул? м? */
 
@@ -108,14 +118,15 @@ input[type='password'] {
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <div class="container">
-        <!-- <a href="{% url 'logout' %}"> Exit</a> -->
-        
-        <h1 calss="Text">Login</h1>
-        <div class="">
-    </div>
-        {% block content %}
-        {% endblock %}
+    <div class="kostili"></div>
+    <div class="full">
+        <div class="container">
+            <h1 calss="Text">Login</h1>
+            <div class="">
+        </div>
+            {% block content %}
+            {% endblock %}
+        </div>
     </div>
 </body>
 </html>
