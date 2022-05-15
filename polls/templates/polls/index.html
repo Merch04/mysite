@@ -51,6 +51,7 @@
 	</header>
     <div class="borderGradient"></div>
     <div class="container">
+<<<<<<< HEAD
         <div class="containerField">
             <h1>Period</h1>
             <div class="timeAndDate d-flex">
@@ -87,17 +88,82 @@
                 </div>
             </form>     
         </div>
+=======
+        <h1>Period</h1>
+        <div class="timeAndDate d-flex">
+            <p class="signDate">Date</p>
+            <!-- <p class="signTime">Time</p> -->
+        </div>
+        <form method="post" id="personForm" data-cities-url="{% url 'ajax_load_restaurants' %}">
+            {% csrf_token %}
+            <div class="timeCode d-flex">
+                <div class="text">
+                    <p class="margin_11_px">From</p>
+                    <p class="margin_32_px">To</p>
+                </div>
+                <div class="date">
+                   
+                    {{form_date.start_date}}
+                    {{form_date.end_date}}
+                    {{form_date.restaurants}}
+                    {{form_date.shift}}
+                  
+                    <!-- new -->
+                </div> 
+            </div>
+            <div class="list">
+                <select id="dropList">
+                    <option value="" style="display: none;" selected="selected">Place Selection</option>
+                    <option value=""></option>
+                </select>
+                <select id="dropList">
+                    <option value="" style="display: none;" selected="selected">Cam Selection</option>
+                    <option value=""></option>
+                </select>
+            </div>
+            <div class="button_container">
+                <input type="submit" value="Confirm" class="button">
+            </div>
+        </form>     
+>>>>>>> 77e441dbaf1f81083b48234d9dc1a98dc5b3268d
     </div>
     
     <script>
         $(function () {
-          $("#id_s_date").datetimepicker({
-            format: 'd/m/Y H:i',
+          $("#id_start_date").datetimepicker({
+            format: 'm/d/Y H:i',
           });
 
-          $("#id_e_date").datetimepicker({
-            format: 'd/m/Y H:i',
+          $("#id_end_date").datetimepicker({
+            format: 'm/d/Y H:i',
           });
+        });
+    </script>
+    <script>
+        $("#id_country").change(function () {
+            const url = $("#personForm").attr("data-cities-url");  // get the url of the `load_cities` view
+            const countryId = $(this).val();  // get the selected country ID from the HTML input
+    
+            $.ajax({                       // initialize an AJAX request
+                url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+                data: {
+                    'country_id': countryId       // add the country id to the GET parameters
+                },
+                success: function (data) {   // `data` is the return of the `load_cities` view function
+                    $("#id_city").html(data);  // replace the contents of the city input with the data that came from the server
+                    /*
+    
+                    let html_data = '<option value="">---------</option>';
+                    data.forEach(function (city) {
+                        html_data += `<option value="${city.id}">${city.name}</option>`
+                    });
+                    console.log(html_data);
+                    $("#id_city").html(html_data);
+    
+                    */
+                }
+            });
+    
         });
     </script>
 </body>

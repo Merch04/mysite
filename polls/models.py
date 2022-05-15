@@ -1,5 +1,4 @@
 from django.db import models
-
 # Create your models here.
 
 
@@ -31,9 +30,32 @@ class Shift(models.Model):
     motion = models.JSONField()
     createdAt = models.DateField()
     updatedAt = models.DateField()
+<<<<<<< HEAD
 
 
 class Restoran(models.Model):
     id = models.TextField(primary_key=True)
     place = models.TextField()
     cams = models.JSONField()
+=======
+    def __str__(self):
+        return self.id
+
+
+class Restaurants(models.Model):
+    name = models.TextField()
+    place = models.TextField()
+    shift = models.ForeignKey(Shift, on_delete=models.SET_NULL, blank=True, null=True)
+    def __str__(self):
+        return self.name
+
+
+class Choise_video(models.Model):
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField()
+    restaurants = models.ForeignKey(Restaurants, on_delete=models.SET_NULL, blank=True, null=True)
+    shift = models.ForeignKey(Shift, on_delete=models.SET_NULL, blank=True, null=True)
+
+    
+    
+>>>>>>> 77e441dbaf1f81083b48234d9dc1a98dc5b3268d

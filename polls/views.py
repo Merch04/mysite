@@ -8,9 +8,14 @@ from .forms import DateForm  # new
 from django.contrib.auth.models import AnonymousUser
 from django.contrib.auth import logout
 import time
+<<<<<<< HEAD
 from .models import Restoran, Video
 from .models import Shift, Telemetry, Video
 
+=======
+from .models import Shift, Telemetry, Video, Restaurants
+from .forms import ChoiseVideoForm
+>>>>>>> 77e441dbaf1f81083b48234d9dc1a98dc5b3268d
 from ast import Try
 
 
@@ -84,19 +89,25 @@ def index(request):
     else:
         if request.method == 'POST':
 
-            form_date = DateForm(request.POST)  # new
+            form_date = ChoiseVideoForm(request.POST)  # new
             if form_date.is_valid():  # new
-
+                
                 print('ДАТА С ВИДЖЕТА')
+<<<<<<< HEAD
                 print('start time: ', str(form_date.cleaned_data['s_date'])[0:-6])
                 print('end time: ', str(form_date.cleaned_data['e_date'])[0:-6])
                 start_date = str(form_date.cleaned_data['s_date'])[0:-6]
                 end_date = str(form_date.cleaned_data['e_date'])[0:-6]
+=======
+                start_date = str(form_date.cleaned_data['start_date'])[0:-6]
+                end_date = str(form_date.cleaned_data['end_date'])[0:-6]
+                print(form_date.cleaned_data['shift'])
+>>>>>>> 77e441dbaf1f81083b48234d9dc1a98dc5b3268d
                 request.session['times'] = [start_date, end_date]
 
                 return HttpResponseRedirect('statics')
         else:
-            form_date = DateForm()
+            form_date = ChoiseVideoForm()
             
         content = {'form_date': form_date}
 
@@ -120,6 +131,11 @@ def statics(request):
         }
         return render(request, 'polls/statics.html', content)
 
+def load_restaurants(request):
+    shift_id = request.GET.get('shift_id')
+    restaurants = Restaurants.objects.filter(shift_id=shift_id).all()
+    return render(request, 'polls/restaurants_dropdown_list_options.html', {'restaurants': restaurants})
+    # return JsonResponse(list(cities.values('id', 'name')), safe=False)
 
 def hui(request):
     peremenaya = Restoran.objects.all()[0].cams["1"]
