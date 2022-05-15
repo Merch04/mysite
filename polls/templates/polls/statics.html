@@ -21,14 +21,27 @@
 	<header class="header">
 		<div class="left nav">
 			<a href="http://127.0.0.1:8000/polls/">Back to Period</a>
-			<a href="#openModalVideo">Change video</a>
 		</div>
 		<div class="right nav">
-			<a href="#openModal">Show Statistic</a>
+			<a href="http://127.0.0.1:8000/login/">Logout</a>
 		</div>
 	</header>
-	<div class="borderGradient"></div>
+	<!-- <div class="borderGradient"></div> -->
 	<div class="container"></div>
+
+	<div id="openModalVisual" class="modal">
+		<div class="modal-dialog">
+			  <div class="modal-content">
+				<div class="modal-header">
+					  <h3 class="modal-title">Visual statistics</h3>
+					  <a href="#close" title="Close" class="close">×</a>
+				</div>
+				<div class="modal-body">    
+					  <p>...</p>
+				</div>
+			  </div>
+		</div>
+	</div>
 
 		<div id="openModalVideo" class="modal">
 			<div class="modal-dialog">
@@ -85,12 +98,21 @@
 	</div>
 	<section class="common d-flex">
 		<div class="videoContainer">
-			{% for x in video %}
-			<video width="840px" controls="controls">
-				<source src="{{x.video.url}}" type="video/mp4">
-			</video>
-			{% endfor %}
+			<div class="video">
+				{% for x in video %}
+				<video width="840px" controls="controls">
+					<source src="{{x.video.url}}" type="video/mp4">
+				</video>
+				{% endfor %}
+			</div>
+			<div class="btns d-flex">
+				<a href="#openModal">Show statistic</a>
+				<a href="#openModalVideo">Change video</a>
+				<a href="#openModalVisual">Show visual</a>
+			</div>
 		</div>
+
+
 		<div class="visual">
 			
 		</div>

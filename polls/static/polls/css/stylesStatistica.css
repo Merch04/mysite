@@ -8,8 +8,7 @@ body {
     font-weight: 400;
     line-height: 1.5;
     color: #292b2c;
-    background: rgb(232,153,247);
-    background: linear-gradient(90deg, rgba(232,153,247,1) 0%, rgba(156,169,244,1) 100%);
+    background: #161616;
     margin: 0;
 } 
 
@@ -24,8 +23,9 @@ a {
 .header {
     max-width: 100%;
     height: 60px;
-    background: white;
+    background: #161616;
     display: flex;
+    border-bottom: 1px solid #c9c9c9;
 }
 
 .header .right {
@@ -42,7 +42,7 @@ a {
     font-family: Comfortaa, Light300;
     font-weight: 700;
     font-size: 0.875em;
-    color: black;
+    color: #c9c9c9;
     margin-left: 20px;
     padding-right: 20px;
 }
@@ -85,11 +85,39 @@ a {
     margin: 0 auto;
 }
 
+video {
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.btns {
+    padding-top: 30px;
+    margin: 0 auto;
+    width: 530px;
+    justify-content: space-between;
+}
+
+.btns a {
+    text-decoration: none;
+    font-family: Comfortaa, Light300;
+    font-weight: 700;
+    font-size: 0.875em;
+    color: #c9c9c9;
+    border: 1px solid #c9c9c9;
+    background-color: #161616;
+    padding: 12px 20px;
+}
+
+.btns a:hover {
+    color: #161616;
+    background-color: #c9c9c9;
+    transition: 0.5s;
+}
+
 .common {
     width: 1300px;
     margin: 0 auto;
     height: 909px;
-    background-color: white;
+    background-color: #181818;
 }
 
 /* .visual {

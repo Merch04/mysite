@@ -6,8 +6,7 @@
 body {
     max-width: 100%;
     font-size: 16px;
-    background: rgb(156,169,244);
-    background: linear-gradient(90deg, rgba(156,169,244,1) 4%, rgba(232,163,247,1) 84%);
+    background: #161616;
 }
 
 a {
@@ -32,8 +31,9 @@ p, h1 {
 .header {
     max-width: 100%;
     height: 60px;
-    background-color: white;
+    background: #161616;
     display: flex;
+    border-bottom: 1px solid #c9c9c9;
 }
 
 .borderGradient {
@@ -56,7 +56,7 @@ p, h1 {
     font-family: Comfortaa, Light300;
     font-weight: 700;
     font-size: 0.875em;
-    color: black;
+    color: #c9c9c9;
     margin-left: 20px;
     padding-right: 20px;
 }
@@ -64,8 +64,8 @@ p, h1 {
 .container {
     padding-top: 200px;
     padding-bottom: 315px;
-    width: 1000px;
-    background-color: #f8f8f8;
+    width: 1300px;
+    background-color: #181818;
     margin: 0 auto;
 }
 
@@ -86,8 +86,8 @@ p, h1 {
     margin: 0 auto;
     border: 2px black solid;
     border-radius: 16px;
-    background: rgb(156,169,244);
-    background: linear-gradient(90deg, rgba(156,169,244,1) 4%, rgba(232,163,247,1) 84%);
+    background: #1d1d1e;
+    color: #c9c9c9;
 }
 
 .formContainer {
@@ -131,15 +131,15 @@ p, h1 {
     padding: 10px 30px;
     font-weight: 700;
     font-size: 0.875em;
-    background-color: rgb(35, 35, 46);
-    color: #f8f8f8;
+    background-color: #161616;
+    color: #c9c9c9;
     height: 50px;
     width: 175px;
     border-color: black;
 }
 
 .button:hover {
-    background-color: #fff;
+    background-color: #c9c9c9;
     color: black;
     transition: 0.5s;
     border-color: black;
@@ -151,7 +151,7 @@ p, h1 {
 }
 
 select {
-    background-color: #fff;
+    background-color: #c9c9c9;
     color: black;
     font-family: Comfortaa, Light300;;
     text-align: center;
