@@ -3,7 +3,7 @@ import sqlite3
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 import time
-from .models import Shift, Telemetry, Video
+from .models import Anime_gif, Shift, Telemetry, Video
 from .forms import ChoiseVideoForm
 
 
@@ -191,8 +191,9 @@ def index(request):
                 return HttpResponseRedirect('statics')
         else:
             form_date = ChoiseVideoForm()
-
-        content = {'form_date': form_date}
+        gif_anime = Anime_gif.objects.all()[0].image
+        content = {'form_date': form_date,
+                   'gif_anime': gif_anime, }
 
         return render(request, 'polls/index.html', content)
 

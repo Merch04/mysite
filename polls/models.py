@@ -1,3 +1,4 @@
+from email.mime import image
 from django.db import models
 # Create your models here.
 
@@ -53,3 +54,7 @@ class Choise_video(models.Model):
         Restaurants, on_delete=models.SET_NULL, blank=True, null=True)
     shift = models.ForeignKey(
         Shift, on_delete=models.SET_NULL, blank=True, null=True)
+
+
+class Anime_gif(models.Model):
+    image = models.FileField()
