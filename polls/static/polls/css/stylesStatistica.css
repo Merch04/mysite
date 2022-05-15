@@ -8,12 +8,7 @@ body {
     font-weight: 400;
     line-height: 1.5;
     color: #292b2c;
-<<<<<<< HEAD
     background: #161616;
-=======
-    background: rgb(232, 153, 247);
-    background: linear-gradient(90deg, rgba(232, 153, 247, 1) 0%, rgba(156, 169, 244, 1) 100%);
->>>>>>> 0c87240353ca5146c056739b2a5840b6fbe47711
     margin: 0;
 }
 
