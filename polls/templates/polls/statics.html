@@ -21,7 +21,7 @@
 	<header class="header">
 		<div class="left nav">
 			<a href="http://127.0.0.1:8000/polls/">Back to Period</a>
-			<a href="#">Change video</a>
+			<a href="#openModalVideo">Change video</a>
 		</div>
 		<div class="right nav">
 			<a href="#openModal"">Show Statistic</a>
@@ -29,6 +29,21 @@
 	</header>
 	<div class="borderGradient"></div>
 	<div class="container"></div>
+
+		<div id="openModalVideo" class="modal">
+			<div class="modal-dialog">
+			  	<div class="modal-content">
+					<div class="modal-header">
+				  		<h3 class="modal-title">Choose video</h3>
+				  		<a href="#close" title="Close" class="close">×</a>
+					</div>
+					<div class="modal-body">    
+				  		<p>...</p>
+					</div>
+			  	</div>
+			</div>
+		</div>
+
 		<div id="openModal" class="modal">
 			<div class="modal-dialog">
 			  	<div class="modal-content">
@@ -37,6 +52,7 @@
 				  	<a href="#close" title="Close" class="close">×</a>
 				</div>
 				<div class="modal-body">    
+
 				  	<div class="statistics" id="statistics">
 						<form action="">
 							<p class="statisticBorder">Время отсутствия</p>
@@ -61,9 +77,11 @@
 							<input type="text" value="" disabled>
 						</form>
 					</div>
+
 				</div>
 			</div>
 		</div>
+
 	</div>
 	<section class="common d-flex">
 		<div class="videoContainer">
