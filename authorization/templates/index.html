@@ -20,17 +20,20 @@
 }
 
 h1 {
-    margin-top: 100px;
     margin-bottom: 40px;
 }
 
 body {
-    height: 960px;
+    height: 0px;
+    max-width: 100%;
+    margin: 0;
     font-size: 16px;
     background: rgb(156,169,244);
     background: linear-gradient(90deg, rgba(156,169,244,1) 4%, rgba(232,163,247,1) 84%);
     font-family: Comfortaa, Light300;
-    text-align: center;   
+    text-align: center;
+    margin: 5px;
+    margin-top: 15%;    
 }
 
 .myfieldclass{
@@ -53,7 +56,7 @@ body {
     border-radius: 20px;
     padding: 32px 20px;
     width: 435px;
-    background: rgba(0, 0, 0, 0.5);
+    background: white;
     border: 2px black solid;
 }
 
@@ -74,7 +77,7 @@ input[type="submit"] {
 }
 
 .button:hover {
-    background-color: rgb(205, 191, 211);
+    background: white;
     color: black;
     transition: 0.5s;
 }
@@ -82,33 +85,20 @@ input[type="submit"] {
 input[type='text'] {
     text-align: center;
     font-size: 24px;
-    background-color: rgb(205, 191, 211);
+    background: white;
     border-radius: 8px;
 }
 
 input[type='password'] {
     text-align: center;
     font-size: 24px;
-    background-color: rgb(205, 191, 211);
+    background: white;
     border-radius: 8px;
 }
 
 .toWrite p {
     margin-bottom: 5px;
     font-size: 18px;
-}
-
-.full {
-    margin-top: 100px;
-    width: 1000px;
-    height: 970px;
-    margin: 0 auto;
-    background-color: white;
-}
-
-.kostili {
-    height: 1px;
-    margin-bottom: 100px;
 }
 
 /* тут так все хреново сделано, просто ужас */
@@ -118,15 +108,13 @@ input[type='password'] {
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <div class="kostili"></div>
-    <div class="full">
-        <div class="container">
-            <h1 calss="Text">Login</h1>
-            <div class="">
-        </div>
-            {% block content %}
-            {% endblock %}
-        </div>
+    <div class="container">
+        
+        <h1 calss="Text">Login</h1>
+        <div class="">
+    </div>
+        {% block content %}
+        {% endblock %}
     </div>
 </body>
 </html>
