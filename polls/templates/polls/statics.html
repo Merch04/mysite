@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,16 +12,23 @@
 	<title>Statistics</title>
 
 	<!-- jQuery -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+
 	<!-- XDSoft DateTimePicker -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" integrity="sha256-DOS9W6NR+NFe1fUhEE0PGKY/fubbUCnOfTje2JMDw3Y=" crossorigin="anonymous" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js" integrity="sha256-FEqEelWI3WouFOo2VWP/uJfs1y8KJ++FLh2Lbqc8SJk=" crossorigin="anonymous"></script>
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css"
+		integrity="sha256-DOS9W6NR+NFe1fUhEE0PGKY/fubbUCnOfTje2JMDw3Y=" crossorigin="anonymous" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"
+		integrity="sha256-FEqEelWI3WouFOo2VWP/uJfs1y8KJ++FLh2Lbqc8SJk=" crossorigin="anonymous"></script>
 </head>
+
 <body>
 	<header class="header">
-		<div class="left nav">
+		<<<<<<< HEAD <div class="left nav">
 			<a href="http://127.0.0.1:8000/polls/">Back to Period</a>
+<<<<<<< HEAD
 		</div>
 		<div class="right nav">
 			<a href="http://127.0.0.1:8000/login/">Logout</a>
@@ -54,31 +62,60 @@
 				  		<p>...</p>
 					</div>
 			  	</div>
+=======
+			<a href="#openModalVideo">Change video</a>
+			</div>
+			<div class="right nav">
+				<a href="#openModal">Show Statistic</a>
+			</div>
+	</header>
+	<div class="borderGradient"></div>
+	=======
+	<div class="back">
+		<a href="http://127.0.0.1:8000/polls/">Back to Period</a>
+		<a href="#openModal">Show Statistic</a>
+	</div>
+	</header>
+	>>>>>>> 33a9a8c (master)
+	<div class="container"></div>
+
+	<div id="openModalVideo" class="modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title">Choose video</h3>
+					<a href="#close" title="Close" class="close">×</a>
+				</div>
+				<div class="modal-body">
+					<p>...</p>
+				</div>
+>>>>>>> 0c87240353ca5146c056739b2a5840b6fbe47711
 			</div>
 		</div>
+	</div>
 
-		<div id="openModal" class="modal">
-			<div class="modal-dialog">
-			  	<div class="modal-content">
-					<div class="modal-header">
-				  	<h3 class="modal-title">Statistic</h3>
-				  	<a href="#close" title="Close" class="close">×</a>
+	<div id="openModal" class="modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title">Statistic</h3>
+					<a href="#close" title="Close" class="close">×</a>
 				</div>
-				<div class="modal-body">    
-					
-				  	<div class="statistics" id="statistics">
+				<div class="modal-body">
+
+					<div class="statistics" id="statistics">
 						<form action="">
 							<p class="statisticBorder">Время отсутствия</p>
 							{% for time in miss_time %}
-								<input type="text" value='{{time}}' disabled>
-								<br>
+							<input type="text" value='{{time}}' disabled>
+							<br>
 							{% endfor %}
 						</form>
 						<form action="">
 							<p class="statisticBorder">Тайм-код</p>
 							{% for timecode in miss_timecode %}
-								<input type="text" value="{{timecode}}" disabled>
-								<br>				
+							<input type="text" value="{{timecode}}" disabled>
+							<br>
 							{% endfor %}
 						</form>
 						<form action="">
@@ -114,8 +151,9 @@
 
 
 		<div class="visual">
-			
+
 		</div>
 	</section>
 </body>
+
 </html>

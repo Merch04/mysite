@@ -2,8 +2,10 @@
 {% block title %}Log-in{% endblock %}
 {% block content %}
 
-<form action="." method="post">
+<form action="." method="post" class="toWrite">
+  <p>Your name</p>
   {{ form.username }}
+  <p>Password</p>
   {{ form.password }}
 
   {% csrf_token %}

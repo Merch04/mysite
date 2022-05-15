@@ -74,7 +74,7 @@ def index(request):
                 return HttpResponseRedirect('statics')
         else:
             form_date = ChoiseVideoForm()
-            
+
         content = {'form_date': form_date}
 
         return render(request, 'polls/index.html', content)
@@ -85,11 +85,11 @@ def statics(request):
         return HttpResponseRedirect('/')
     else:
         times = request.session.get('times', None)
-        shiftId = request.session.get('shiftId', None)
-        
+        shift_id = request.session.get('shiftId', None)
+
         miss_time, miss_timecode, temp_samp = read_sqlite_table(
-            times, shiftId)
-        video = Video.objects.all()
+            times, shift_id)
+        video = Video.objects.filter(shiftId=shift_id[0])
         content = {
             'miss_time': miss_time,
             'miss_timecode': miss_timecode,
@@ -103,4 +103,3 @@ def load_shifts(request):
     restaurants_id = request.GET.get('restaurant_id')
     shifts = Shift.objects.filter(restaurants_id=restaurants_id).all()
     return render(request, 'polls/shift_dropdown_list_options.html', {'shifts': shifts})
-
