@@ -178,7 +178,6 @@ def index(request):
         if request.method == 'POST':
             form_date = ChoiseVideoForm(request.POST)  # new
             if form_date.is_valid():  # new
-                print('ДАТА С ВИДЖЕТА')
                 start_date = str(form_date.cleaned_data['start_date'])[0:-6]
                 end_date = str(form_date.cleaned_data['end_date'])[0:-6]
                 shift = str(form_date.cleaned_data['shift'])
