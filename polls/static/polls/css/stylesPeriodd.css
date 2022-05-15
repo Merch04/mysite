@@ -1,20 +1,19 @@
-#blablabla {
+#info {
     display: none;
     animation-duration: 1.5s;
     animation-fill-mode: both;
     animation-name: fadeIn;
-    z-index: 9;
     position: absolute;
 }
   
-#blablabla.open {
+#info.open {
    display: block;
 }
-  
+
 @keyframes fadeIn {
     from {
         opacity: 0;
-}
+    }
     to {
         opacity: 1;
     }
@@ -23,7 +22,6 @@
 .containerFull {
     position: relative;
 }
-
 
 * {
     box-sizing: border-box;
@@ -52,6 +50,7 @@ p, h1 {
 }
 
 ul, li {
+    margin-top: 10px;
     display: block;
     padding: 0;
 }
@@ -66,7 +65,22 @@ ul, p {
     text-align: center;
 }
 
-.info {
+#close {
+    border: 1px solid #c9c9c9;
+    padding: 4px 8px;
+    background-color: #161616;
+    border-color: black;
+    cursor: pointer;
+}
+
+#close:hover {
+    background-color: #c9c9c9;
+    color: black;
+    transition: 0.5s;
+    border-color: black;
+}
+
+.information {
     padding-left: 27px;
 }
 
@@ -99,13 +113,17 @@ ul, p {
     border: none;
 }
 
+.header button {
+    cursor: pointer;
+}
+
 button:focus {
     outline: none;
 }
 
 .container {
     padding-top: 200px;
-    padding-bottom: 270px;
+    padding-bottom: 271px;
     width: 1300px;
     background-color: #181818;
     margin: 0 auto;
