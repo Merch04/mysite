@@ -9,7 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'polls/css/stylesPeriod.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
-    <script src="{% static 'polls/js/scriptPolls.js' %}" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css"
@@ -52,7 +51,7 @@
     </header>
     <div class="kostili"></div>
     <div class="containerFull">
-        <div class="info" id="blablabla">
+        <div class="information" id="info">
             <ul>
                 <li><p>В ролях:</p></li>
                 <li><p>merch04</p></li>
@@ -61,7 +60,7 @@
                 <li><p>Денис GeekBrains</p></li>
                 <li><p>synk</p></li>
                 <li><p>санёк</p></li>
-                <li><img src="{{gif_anime}}" alt="фффф"></li>
+                <li><img src="{{gif_anime}}" alt="gif"></li>
                 <li><button id="close">close</button></li>
             </ul>
         </div>
@@ -71,7 +70,6 @@
                 <h1>Period</h1>
                 <div class="timeAndDate d-flex">
                     <p class="signDate">Date</p>
-                    <!-- <p class="signTime">Time</p> -->
                 </div>
                 <form method="post" id="personForm" data-shifts-url="{% url 'ajax_load_shifts' %}">
                     {% csrf_token %}
@@ -86,7 +84,9 @@
                         </div>
                     </div>
                     <div class="list">
+                        <p>Place selection</p>
                         {{form_date.restaurants}}
+                        <p>Cam selection</p>
                         {{form_date.shift}}
                     </div>
                     <div class="button_container">
@@ -121,20 +121,19 @@
                     $("#id_shift").html(data);
                 }
             });
-
         });
     </script>
     <script>
         const button = document.querySelector('button');
-        const form = document.querySelector('#blablabla');
-        const btnclose = document.getElementById("close");
+        const form = document.querySelector('#info');
+        const buttonClose = document.getElementById("close");
 
         button.addEventListener('click', () => {
             form.classList.add('open');
         });
 
-        btnclose.addEventListener('click', () => {
-            form.style.display = "none";
+        buttonClose.addEventListener('click', () => {
+            form.classList.remove('open');
         });
     </script>
 </body>
