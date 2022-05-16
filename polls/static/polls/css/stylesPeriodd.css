@@ -1,23 +1,92 @@
+#info {
+    display: none;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+    animation-name: fadeIn;
+    position: absolute;
+}
+  
+#info.open {
+   display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.containerFull {
+    position: relative;
+}
+
 * {
     box-sizing: border-box;
+    margin: 0;
 }
 
 body {
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: Comfortaa, Light300;
+    max-width: 100%;
     font-size: 16px;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #292b2c;
     background: #161616;
-    margin: 0;
 }
 
 a {
     text-decoration: none;
 }
 
+h3 {
+    font-family: Comfortaa, Light300;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+p, h1 {
+    font-family: Comfortaa, Light300;
+}
+
+ul, li {
+    margin-top: 10px;
+    display: block;
+    padding: 0;
+}
+
 .d-flex {
     display: flex;
+}
+
+ul, p {
+    font-size: 16px;
+    color: #c9c9c9;
+    text-align: center;
+}
+
+#close {
+    border: 1px solid #c9c9c9;
+    padding: 4px 8px;
+    background-color: #161616;
+    border-color: black;
+    cursor: pointer;
+}
+
+#close:hover {
+    background-color: #c9c9c9;
+    color: black;
+    transition: 0.5s;
+    border-color: black;
+}
+
+.information {
+    padding-left: 27px;
 }
 
 .header {
@@ -37,83 +106,134 @@ a {
     align-items: center;
 }
 
-.header .nav a {
+.header .nav a, button {
     text-transform: uppercase;
     font-family: Comfortaa, Light300;
     font-weight: 700;
     font-size: 0.875em;
     color: #c9c9c9;
     margin-left: 20px;
-    padding-right: 20px;
-}
-
-.borderGradient {
-    height: 1px;
-    background: rgb(232, 153, 247);
-    background: linear-gradient(90deg, rgba(232, 153, 247, 1) 0%, rgba(156, 169, 244, 1) 100%);
-}
-
-.statistics {
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    color: #f8f8f8;
-}
-
-.statistics form {
-    padding-bottom: 10px;
-    width: 210px;
-}
-
-.statistics p {
-    border-bottom: 1px #f8f8f8 solid;
-    margin-bottom: 8px;
-    padding-bottom: 8px;
-}
-
-.statistics input {
-    background-color: #23232e;
+    margin-right: 20px;
+    background-color: #161616;
     border: none;
-    text-align: center;
-    color: #f8f8f8;
 }
 
-.videoContainer {
-    padding-top: 60px;
-    width: 930px;
-    text-align: center;
+.header button {
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+.container {
+    padding-top: 200px;
+    padding-bottom: 271px;
+    width: 1300px;
+    background-color: #181818;
     margin: 0 auto;
 }
 
-.btns {
-    padding-top: 30px;
-    margin: 0 auto;
-    width: 530px;
-    justify-content: space-between;
+.timeAndDate {
+    width: 276px;
+    justify-content: right;
+    margin-bottom: 5px;
 }
 
-.btns a {
-    text-decoration: none;
-    font-family: Comfortaa, Light300;
+.timeAndDate .signDate {
+    margin-right: 70px;
+}
+
+.containerField {
+    padding: 32px 20px;
+    margin-top: 286px;
+    width: 415px;
+    margin: 0 auto;
+    border: 2px black solid;
+    border-radius: 16px;
+    background: #1d1d1e;
+    color: #c9c9c9;
+}
+
+.formContainer {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.timeCode {
+    margin-left: 30px;
+}
+
+.margin_11_px {
+    margin-bottom: 11px;
+}
+
+.margin_32_px {
+    margin-bottom: 32px;
+}
+
+.text {
+    margin-right: 20px;
+    text-align: right;
+}
+
+.date {
+    width: 106px;
+    margin-right: 20px;
+}
+
+.time {
+    width: 75px;
+}
+
+.button_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.button {
+    padding: 10px 30px;
     font-weight: 700;
     font-size: 0.875em;
-    color: #c9c9c9;
-    border: 1px solid #c9c9c9;
     background-color: #161616;
-    padding: 12px 20px;
+    color: #c9c9c9;
+    height: 50px;
+    width: 175px;
+    border-color: black;
+    text-transform: uppercase;
 }
 
-.btns a:hover {
-    color: #161616;
+.button:hover {
     background-color: #c9c9c9;
+    color: black;
     transition: 0.5s;
+    border-color: black;
 }
 
-.common {
-    width: 1300px;
+.list {
+    width: 175px;
     margin: 0 auto;
-    height: 909px;
-    background-color: #181818;
+}
+
+select {
+    background-color: #c9c9c9;
+    color: black;
+    font-family: Comfortaa, Light300;;
+    text-align: center;
+    margin-bottom: 18px;
+    appearance: none;
+    border: 2px black solid;
+    height: 40px;
+    width: 175px;
+}
+
+select:focus {
+    outline: none !important;
+}
+
+.list p {
+    margin-bottom: 5px;
 }
 
 /* свойства модального окна по умолчанию */
@@ -251,4 +371,8 @@ a {
     padding: 15px;
     overflow: auto;
     background-color: rgb(35, 35, 46);
+}
+
+.modal-body p {
+    color: #f8f8f8;
 }
