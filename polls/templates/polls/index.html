@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'polls/css/stylesPeriod.css' %}">
+    <link rel="stylesheet" href="{% static 'polls/css/stylesPeriodd.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet"
@@ -44,13 +44,29 @@
     <header class="header">
         <div class="left nav">
             <button>Information</button>
+            <a href="#openModalDBTimeLimit">Time info</a>
         </div>
         <div class="right nav">
             <a href="{% url 'logout' %}">Logout</a>
         </div>
     </header>
-    <div class="kostili"></div>
+
     <div class="containerFull">
+
+        <div id="openModalDBTimeLimit" class="modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Info about time in database</h3>
+                        <a href="#close" title="Close" class="close">×</a>
+                    </div>
+                    <div class="modal-body">
+                        <p>На данный момент времени в базе данных находится информация только за 12 апреля</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="information" id="info">
             <ul>
                 <li><p>В ролях:</p></li>
@@ -59,7 +75,7 @@
                 <li><p>Retrast</p></li>
                 <li><p>Денис GeekBrains</p></li>
                 <li><p>synk</p></li>
-                <li><p>санёк</p></li>
+                <li><p>afterRain</p></li>
                 <li><img src="{{gif_anime}}" alt="gif"></li>
                 <li><button id="close">close</button></li>
             </ul>
